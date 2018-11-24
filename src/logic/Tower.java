@@ -1,15 +1,25 @@
 package logic;
-
+//parent class for all tower
 public abstract class Tower {
-	int firepower;
-	int range;
+	private int firepower;
+	private int range;
 	
 	public Tower(int firepower, int range) {
 		this.firepower = firepower;
 		this.range = range;
 	}
 	
-	void fireat(Target target) {
-		target.health -= this.firepower;
+	public void fireat(Target target) {
+		if(target.getHealth()>this.firepower) target.setHealth(target.getHealth()-firepower);
+		else target.setHealth(0);
+	}
+
+	//getter and setter
+	public int getFirepower() {
+		return firepower;
+	}
+
+	public int getRange() {
+		return range;
 	}
 }
