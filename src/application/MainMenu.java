@@ -23,7 +23,7 @@ public class MainMenu extends VBox{
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Play button pressed");
-				//GUI.getStage().setScene(GUI.getSceneOfPlay());
+				GUI.getStage().setScene(GUI.getSceneOfNameEntering());
 			}
 		});
 		settings.setOnAction(new EventHandler<ActionEvent>(){

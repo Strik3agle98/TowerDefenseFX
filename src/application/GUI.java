@@ -12,11 +12,15 @@ public class GUI extends Application {
 	private static Scene sc_MainMenu;
 	private static Scene sc_Scoreboard;
 	private static Scene sc_Map;
+	private static Scene sc_NameEntering;
 	public static Stage getStage() {
 		return guiStage;
 	}
 	public static Scene getSceneOfMainMenu() {
 		return sc_MainMenu;
+	}
+	public static Scene getSceneOfNameEntering() {
+		return sc_NameEntering;
 	}
 	public static Scene getSceneOfSettings() {
 		return sc_Settings;
@@ -34,11 +38,13 @@ public class GUI extends Application {
 			MainMenu mainMenu = new MainMenu();
 			Settings settings = new Settings();
 			Scoreboard scoreboard = new Scoreboard();
+			NameEntering nameEntering = new NameEntering();
 			Map map = new Map();
 			sc_MainMenu = new Scene(mainMenu,600,400);
 			sc_Settings = new Scene(settings, 600,400);
 			sc_Scoreboard = new Scene(scoreboard,600,400);
 			sc_Map = new Scene(map,600,400);
+			sc_NameEntering = new Scene(nameEntering,600,400);
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(sc_MainMenu);
 			primaryStage.show();
