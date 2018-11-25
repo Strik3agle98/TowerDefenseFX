@@ -6,8 +6,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-
 
 public class MainMenu extends VBox{
 	Button play, settings, scoreboard;
@@ -20,22 +18,27 @@ public class MainMenu extends VBox{
 		scoreboard.setPrefWidth(100);
 		setAlignment(Pos.CENTER);
 		setPadding(new Insets(20,20,20,20));
+
 		setSpacing(20);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Play button pressed");
+				//GUI.getStage().setScene(GUI.getSceneOfPlay());
 			}
 		});
 		settings.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent event) {
 				System.out.println("Settings button pressed");
+				GUI.getStage().setScene(GUI.getSceneOfSettings());
 			}
 		});
 		scoreboard.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent event) {
 				System.out.println("Scoreboard button pressed");
+				GUI.getStage().setScene(GUI.getSceneOfScoreboard());
 			}
 		});
+		
 		getChildren().addAll(play,settings,scoreboard);
 	}
 	

@@ -1,5 +1,9 @@
 package application;
 
-public class Scoreboard {
+import javafx.scene.layout.VBox;
 
+public class Scoreboard extends VBox{
+	public Scoreboard() {
+		
+	}
 }

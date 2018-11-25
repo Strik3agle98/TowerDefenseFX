@@ -1,5 +1,9 @@
 package application;
 
-public class Map {
+import javafx.scene.layout.BorderPane;
 
+public class Map extends BorderPane{
+	public Map() {
+		
+	}
 }
