@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 
 public class MainMenu extends VBox{
 	Button play, settings, scoreboard;
+	
 	public MainMenu() {
 		play = new Button("Play");
 		settings = new Button("Settings");

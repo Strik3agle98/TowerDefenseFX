@@ -25,9 +25,9 @@ public class Map extends StackPane{
 			public void handle(KeyEvent event) {
 				switch(event.getCode()) {
 					case ESCAPE : GUI.getStage().setScene(GUI.getSceneOfSettings());
-					break;
-				default:
-					break;
+						break;
+					default:
+						break;
 				}
 			}
 		});

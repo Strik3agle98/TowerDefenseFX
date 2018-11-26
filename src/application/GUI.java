@@ -1,5 +1,7 @@
 package application;
 	
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -8,6 +10,7 @@ import javafx.scene.paint.Color;
 
 
 public class GUI extends Application {
+	private static Data data;
 	private static Stage guiStage;
 	private static Scene sc_Settings;
 	private static Scene sc_MainMenu;
@@ -32,6 +35,9 @@ public class GUI extends Application {
 	public static Scene getSceneOfMap() {
 		return sc_Map;
 	}
+	public static Data getData() {
+		return data;
+	}
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -47,6 +53,7 @@ public class GUI extends Application {
 			sc_Map = new Scene(map,600,400,Color.DARKGREEN);
 			sc_NameEntering = new Scene(nameEntering,600,400);
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			data = new Data(new ArrayList<User>());
 			primaryStage.setScene(sc_MainMenu);
 			primaryStage.show();
 		} catch(Exception e) {

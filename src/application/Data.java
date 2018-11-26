@@ -28,4 +28,10 @@ public class Data{
 		User.setMode(2);
 		Collections.sort(users);
 	}
+	public ArrayList<User> getUsers(){
+		return users;
+	}
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
+	}
 }

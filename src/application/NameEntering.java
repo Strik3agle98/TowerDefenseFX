@@ -1,5 +1,8 @@
 package application;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -14,6 +17,7 @@ public class NameEntering extends VBox{
 	private Button enter,back;
 	private HBox group1,group2;
 	private Text t1;
+	private FileWriter fw;
 	public NameEntering() {
 		group1 = new HBox();
 		t1 = new Text("Please enter your username:");
@@ -37,7 +41,7 @@ public class NameEntering extends VBox{
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed enter.");
 				User new_user = new User(name.getText());
-				
+				GUI.getData().addUser(new_user);
 				//save name and load game....
 				GUI.getStage().setScene(GUI.getSceneOfMap());
 			}
