@@ -17,7 +17,6 @@ public class NameEntering extends VBox{
 	private Button enter,back;
 	private HBox group1,group2;
 	private Text t1;
-	private FileWriter fw;
 	public NameEntering() {
 		group1 = new HBox();
 		t1 = new Text("Please enter your username:");
