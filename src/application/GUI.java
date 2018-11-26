@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 
 
 public class GUI extends Application {
@@ -43,7 +44,7 @@ public class GUI extends Application {
 			sc_MainMenu = new Scene(mainMenu,600,400);
 			sc_Settings = new Scene(settings, 600,400);
 			sc_Scoreboard = new Scene(scoreboard,600,400);
-			sc_Map = new Scene(map,600,400);
+			sc_Map = new Scene(map,600,400,Color.DARKGREEN);
 			sc_NameEntering = new Scene(nameEntering,600,400);
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(sc_MainMenu);

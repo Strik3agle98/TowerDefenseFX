@@ -36,8 +36,10 @@ public class NameEntering extends VBox{
 		enter.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed enter.");
-				//save name and load game....
+				User new_user = new User(name.getText());
 				
+				//save name and load game....
+				GUI.getStage().setScene(GUI.getSceneOfMap());
 			}
 		});
 		setSpacing(20);
