@@ -3,9 +3,11 @@ package application;
 import java.util.ArrayList;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 
 
@@ -52,10 +54,12 @@ public class GUI extends Application {
 			sc_Scoreboard = new Scene(scoreboard,600,400);
 			sc_Map = new Scene(map,600,400,Color.DARKGREEN);
 			sc_NameEntering = new Scene(nameEntering,600,400);
+			SceneManager sceneManager = new SceneManager();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			data = new Data(new ArrayList<User>());
 			primaryStage.setScene(sc_MainMenu);
 			primaryStage.show();
+			primaryStage.setTitle("TowerDefense");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
