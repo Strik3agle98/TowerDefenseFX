@@ -20,8 +20,9 @@ public class NameEntering extends VBox{
 	public NameEntering() {
 		group1 = new HBox();
 		t1 = new Text("Please enter your username:");
-		name = new TextField("John Smith");
+		name = new TextField();
 		name.setPrefWidth(200);
+		name.setPromptText("John Smith");
 		group1.getChildren().addAll(t1,name);
 		group1.setAlignment(Pos.CENTER_LEFT);
 		group1.setSpacing(10);
