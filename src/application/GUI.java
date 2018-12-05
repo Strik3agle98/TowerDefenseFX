@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 
 
 public class GUI extends Application {
-	private static final int W = 1000, H = 600;
+	private static final int W = 1400, H = 1000;
 	private static Data data;
 	private static Stage guiStage;
 	private static Scene sc_Settings;
@@ -50,7 +50,7 @@ public class GUI extends Application {
 			Scoreboard scoreboard = new Scoreboard();
 			NameEntering nameEntering = new NameEntering();
 			GameScreen gameScreen = new GameScreen();
-			sc_MainMenu = new Scene(mainMenu,W,800);
+			sc_MainMenu = new Scene(mainMenu,W,H);
 			sc_Settings = new Scene(settings, W,H);
 			sc_Scoreboard = new Scene(scoreboard,W,H);
 			sc_GameScreen = new Scene(gameScreen,W,H,Color.DARKGREEN);
