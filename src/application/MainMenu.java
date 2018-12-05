@@ -14,9 +14,9 @@ public class MainMenu extends VBox{
 		play = new Button("Play");
 		settings = new Button("Settings");
 		scoreboard = new Button("Scoreboard");
-		play.setPrefWidth(100);
-		settings.setPrefWidth(100);
-		scoreboard.setPrefWidth(100);
+		play.setPrefSize(400, 50);
+		settings.setPrefSize(400,50);
+		scoreboard.setPrefSize(400,50);
 		setAlignment(Pos.CENTER);
 		setPadding(new Insets(20,20,20,20));
 
