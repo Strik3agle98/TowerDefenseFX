@@ -43,7 +43,7 @@ public class NameEntering extends VBox{
 				User new_user = new User(name.getText());
 				GUI.getData().addUser(new_user);
 				//save name and load game....
-				GUI.getStage().setScene(GUI.getSceneOfMap());
+				GUI.getStage().setScene(GUI.getSceneOfGameScreen());
 			}
 		});
 		setSpacing(20);

@@ -1,25 +1,30 @@
 package application;
-import javafx.animation.AnimationTimer;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.BorderPane;
+
+import javafx.geometry.Insets;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-public class Map extends StackPane{
-	private GridPane map;
-	private Rectangle r;
+
+public class Map extends GridPane{
+	private GridPane Table;
 	public Map() {
-		map = new GridPane();
-		r = new Rectangle();
-		r.setX(0);
-		r.setY(0);
-		r.setWidth(50);
-		r.setHeight(50);
-		map.getChildren().addAll(r);
-		getChildren().addAll(map);
+		setPadding(new Insets(100,100,100,100));
+		for(int x = 0; x < 5; x++) {
+			for(int i = 0; i < 8; i++) {
+				Canvas c = new Canvas(100,100);
+				GraphicsContext gc = c.getGraphicsContext2D();
+				gc.setFill(Color.AQUA);
+				gc.fillRect(0, 0, c.getWidth(), c.getHeight());
+				gc.setStroke(Color.BLACK);
+				gc.strokeRect(0, 0, c.getWidth(), c.getHeight());
+				add(c,i,x);
+			}
+		}
+		Table = new GridPane();
+		
 	}
 }
