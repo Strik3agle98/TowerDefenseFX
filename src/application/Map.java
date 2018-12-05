@@ -21,15 +21,5 @@ public class Map extends StackPane{
 		r.setHeight(50);
 		map.getChildren().addAll(r);
 		getChildren().addAll(map);
-		setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event) {
-				switch(event.getCode()) {
-					case ESCAPE : GUI.getStage().setScene(GUI.getSceneOfSettings());
-						break;
-					default:
-						break;
-				}
-			}
-		});
 	}
 }
