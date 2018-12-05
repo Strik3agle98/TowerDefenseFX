@@ -10,6 +10,7 @@ public class GameUIController extends VBox{
 	public GameUIController() {
 		deck = new Deck();
 		map = new Map();
+		deck.toFront();
 		setPadding(new Insets(10,10,10,10));
 		getChildren().addAll(deck,map);
 	}
