@@ -43,8 +43,8 @@ public class Settings extends VBox {
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed back.");
-				if(GUI.getStage().getScene() == GUI.getSceneOfMap()) {
-					GUI.getStage().setScene(GUI.getSceneOfMap());
+				if(GUI.getStage().getScene() == GUI.getSceneOfGameScreen()) {
+					GUI.getStage().setScene(GUI.getSceneOfGameScreen());
 				}
 				else {
 					GUI.getStage().setScene(GUI.getSceneOfMainMenu());

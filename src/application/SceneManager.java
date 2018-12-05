@@ -7,9 +7,12 @@ import javafx.scene.paint.Color;
 
 public class SceneManager {
 	public SceneManager() {
-		Scene sc_Map = GUI.getSceneOfMap();
-		Scene sc_MainMenu = GUI.getSceneOfMainMenu();
-		sc_Map.setOnKeyPressed(new EventHandler<KeyEvent>() {
+		FieldController();
+		
+	}
+	public void FieldController() {
+		Scene sc_GameScreen = GUI.getSceneOfGameScreen();
+		sc_GameScreen.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				switch(event.getCode()) {
 					case ESCAPE : 
@@ -19,5 +22,6 @@ public class SceneManager {
 				}
 			}
 		});
+		
 	}
 }

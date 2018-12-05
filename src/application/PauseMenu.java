@@ -15,7 +15,7 @@ public class PauseMenu extends VBox{
 		resume.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed resume.");
-				GUI.getStage().setScene(GUI.getSceneOfMap());
+				GUI.getStage().setScene(GUI.getSceneOfGameScreen());
 				
 			}
 		});
