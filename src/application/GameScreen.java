@@ -14,9 +14,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 public class GameScreen extends StackPane{
-	private Map map = new Map();
+	private GameUIController gameUIController;
 	public GameScreen() {
-		getChildren().add(map);
+		gameUIController = new GameUIController();
+		getChildren().addAll(gameUIController);
 	}
 	
 }
