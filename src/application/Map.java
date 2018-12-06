@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
@@ -48,6 +49,7 @@ public class Map extends GridPane{
 //					System.out.println("Pressed on Node");
 //					
 //				});
+				
 				c.setOnDragOver((t)->{
 					System.out.println("On drag over");
 					if (t.getGestureSource() != c && t.getDragboard().hasString()) {

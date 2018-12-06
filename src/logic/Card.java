@@ -3,11 +3,12 @@ package logic;
 import javafx.scene.image.Image;
 
 public class Card {
-	private Tower type;
+	private Tower tower;
+	private String name;
 	private int cost;
-	private int reloadTime;
+	private int reload;
 	private Image cardImage;
-	public Card(Tower type){
-		this.type = type;
+	public Card(Tower tower){
+		
 	}
 }

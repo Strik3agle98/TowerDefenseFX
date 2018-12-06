@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
@@ -46,6 +47,9 @@ public class Deck extends GridPane{
 //				c.getGraphicsContext2D().fillRect(0, 0, c.getWidth(), c.getHeight());
 //				t.consume();
 //			});
+			System.out.println("Card_" + i + ".png");
+			c.getGraphicsContext2D().drawImage(new Image("Card_" + i + ".png"), 0, 0, 100, 100);
+			
 			c.setOnDragDetected((t)->{
 				System.out.println("Drag Detected");
 				Dragboard db = c.startDragAndDrop(TransferMode.MOVE);
@@ -56,9 +60,10 @@ public class Deck extends GridPane{
 			});
 			GraphicsContext gc = c.getGraphicsContext2D();
 			gc.setStroke(Color.BLACK);
-			gc.setFill(Color.YELLOW);
-			gc.fillRect(0, 0, c.getWidth(), c.getHeight());
-			gc.strokeRect(0, 0, c.getWidth(), c.getHeight());
+			//gc.setFill(Color.YELLOW);
+			
+			//gc.fillRect(0, 0, c.getWidth(), c.getHeight());
+			//gc.strokeRect(0, 0, c.getWidth(), c.getHeight());
 		
 			add(c,i,0);
 			setStyle("-fx-grid-lines-visible: true");

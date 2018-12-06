@@ -11,14 +11,14 @@ public abstract class Tower {
 		this.reload = reload;
 	}
 	
-	public void fireat(Target target) {
+	public void fireAt(Target target) {
 		if(target.getHealth()>this.firepower) target.setHealth(target.getHealth()-firepower);
 		else target.setHealth(0);
 	}
 
 	//getter and setter
 	public int getFirepower() {
-		return firepower;
+		return firepower; 
 	}
 	
 	public void setFirepower(int power) {
