@@ -54,6 +54,7 @@ public class Deck extends GridPane{
 				System.out.println("Drag Detected");
 				Dragboard db = c.startDragAndDrop(TransferMode.MOVE);
 				ClipboardContent content = new ClipboardContent();
+				content.putImage(new Image("Tower_" + getColumnIndex(c) + ".png", 100,100,false,false));
 				content.putString("Tower_" + getColumnIndex(c));
 				db.setContent(content);
 				t.consume();

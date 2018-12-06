@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import logic.Logic;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
@@ -60,6 +61,7 @@ public class GUI extends Application {
 			sc_GameScreen = new Scene(gameScreen,W,H,Color.DARKGREEN);
 			sc_NameEntering = new Scene(nameEntering,W,H);
 			SceneManager sceneManager = new SceneManager();
+			new Logic();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			data = new Data(new ArrayList<User>());
 			primaryStage.setScene(sc_MainMenu);
