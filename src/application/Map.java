@@ -19,7 +19,7 @@ public class Map extends GridPane{
 	public Map() {
 		setPadding(new Insets(10,10,10,10));
 		for(int x = 0; x < 8; x++) {
-			for(int i = 0; i < 6; i++) {
+			for(int i = 0; i < 5; i++) {
 				Canvas c = new Canvas(130,130);
 //				c.setOnMouseDragReleased((t) ->{
 //					System.out.println("Snap to grid");
@@ -91,12 +91,13 @@ public class Map extends GridPane{
 					@Override
 					public void handle(DragEvent event) {
 						/* data dropped */
-						System.out.println("onDragDropped");
+						System.out.println("on Drag Dropped");
 						/* if there is a string data on dragboard, read it and use it */
 						Dragboard db = event.getDragboard();
 						boolean success = false;
 						if (db.hasString()) {
-							System.out.println("GOT " + db.getString());
+							System.out.println("GOT " + db.getString() + " at row : " + getRowIndex(c) + ", at column : " + getColumnIndex(c));
+							Field.setTable(getRowIndex(c),getColumnIndex(c),Integer.parseInt(db.getString().substring(6, 7)));
 							success = true;
 							//c.getGraphicsContext2D().setFill(Color.BLACK);
 							//c.getGraphicsContext2D().fillRect(0, 0, c.getWidth(),c.getHeight());

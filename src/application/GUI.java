@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 
 
 public class GUI extends Application {
-	private static final int W = 1400, H = 1000;
+	private static final int W = 1200, H = 800;
 	private static Data data;
 	private static Stage guiStage;
 	private static Scene sc_Settings;

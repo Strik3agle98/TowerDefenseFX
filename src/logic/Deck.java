@@ -54,7 +54,7 @@ public class Deck extends GridPane{
 				System.out.println("Drag Detected");
 				Dragboard db = c.startDragAndDrop(TransferMode.MOVE);
 				ClipboardContent content = new ClipboardContent();
-				content.putString("Plant");
+				content.putString("Tower_" + getColumnIndex(c));
 				db.setContent(content);
 				t.consume();
 			});
@@ -68,6 +68,7 @@ public class Deck extends GridPane{
 			add(c,i,0);
 			setStyle("-fx-grid-lines-visible: true");
 		}
+		setPadding(new Insets(10,10,10,10));
 		
 	}
 	public void drawCurrentScoreString(GraphicsContext gc){

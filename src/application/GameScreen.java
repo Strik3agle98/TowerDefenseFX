@@ -15,9 +15,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 public class GameScreen extends StackPane{
 	private GameUIController gameUIController;
+	private Field field;
 	public GameScreen() {
 		gameUIController = new GameUIController();
-		getChildren().addAll(gameUIController);
+		field = new Field();
+		
+		getChildren().addAll(field,gameUIController);
+	}
+	public GameUIController getGameUIController() {
+		return gameUIController;
 	}
 	
 }
