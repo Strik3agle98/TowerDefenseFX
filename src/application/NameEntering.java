@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -37,6 +38,7 @@ public class NameEntering extends VBox{
 				GUI.getStage().setScene(GUI.getSceneOfMainMenu());
 			}
 		});
+		back.setCursor(Cursor.HAND);
 		enter.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed enter.");
@@ -46,6 +48,7 @@ public class NameEntering extends VBox{
 				GUI.getStage().setScene(GUI.getSceneOfGameScreen());
 			}
 		});
+		enter.setCursor(Cursor.HAND);
 		setSpacing(20);
 		setPadding(new Insets(20,20,20,20));
 		setAlignment(Pos.CENTER);

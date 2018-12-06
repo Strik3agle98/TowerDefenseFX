@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
@@ -51,7 +52,8 @@ public class Settings extends VBox {
 				}
 			}
 		});
-		
+		back.setCursor(Cursor.HAND);
+		setStyle("-fx-background-color: skyblue");
 	}
 	
 }
