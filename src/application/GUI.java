@@ -20,6 +20,7 @@ public class GUI extends Application {
 	private static Scene sc_Scoreboard;
 	private static Scene sc_GameScreen;
 	private static Scene sc_NameEntering;
+	private static int Score = 0;
 	public static Stage getStage() {
 		return guiStage;
 	}
@@ -40,6 +41,9 @@ public class GUI extends Application {
 	}
 	public static Data getData() {
 		return data;
+	}
+	public static int getScore() {
+		return Score;
 	}
 	@Override
 	public void start(Stage primaryStage) {
