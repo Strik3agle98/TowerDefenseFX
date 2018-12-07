@@ -1,0 +1,7 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#main_menu{
+	-fx-background-image: url('background_0.jpg');
+	-fx-background-repeat: stretch;
+	-fx-background-size: 1400 1000;
+	-fx-background-position: center center;
+}

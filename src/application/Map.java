@@ -25,35 +25,6 @@ public class Map extends GridPane{
 		for(int x = 0; x < 8; x++) {
 			for(int i = 0; i < 5; i++) {
 				Canvas c = new Canvas(130,130);
-//				c.setOnMouseDragReleased((t) ->{
-//					System.out.println("Snap to grid");
-//					c.getGraphicsContext2D().setFill(Color.YELLOW);
-//					c.getGraphicsContext2D().fillRect(0,0, c.getWidth(), c.getHeight());
-//				});
-//				c.setOnMouseDragOver((t) ->{
-//					System.out.println("Hovered to grid!");
-//					
-//				});
-//				c.setOnMouseDragEntered((t) -> {
-//					System.out.println("Entered this grid");
-//					c.getGraphicsContext2D().setFill(Color.RED);
-//					c.getGraphicsContext2D().fillRect(0,0, c.getWidth(), c.getHeight());
-//				});
-////				c.setOnDragDropped((t) -> {
-////					System.out.println("Drop Successful");
-////					c.getGraphicsContext2D().setFill(Color.BROWN);
-////					c.getGraphicsContext2D().fillRect(0,0, c.getWidth(), c.getHeight());
-////				});
-//				c.setOnMouseDragExited((t) -> {
-//					System.out.println("Drag out of this node");
-//					c.getGraphicsContext2D().setFill(Color.AQUA);
-//					c.getGraphicsContext2D().fillRect(0,0, c.getWidth(), c.getHeight());
-//				});
-//				c.setOnMousePressed((t) ->{
-//					System.out.println("Pressed on Node");
-//					
-//				});
-				
 				c.setOnDragOver((t)->{
 					System.out.println("On drag over");
 					if (t.getGestureSource() != c && t.getDragboard().hasString()) {
@@ -106,7 +77,7 @@ public class Map extends GridPane{
 							switch(Integer.parseInt(db.getString().substring(6, 7))) {
 								case 1: Field.addTower((Tower)(new Frenchfries()), row, col); break;
 								case 2: Field.addTower((Tower)(new IceCream()), row, col); break;
-								case 3:Field.addTower((Tower)(new Hamburger()), row, col); break;
+								case 3: Field.addTower((Tower)(new Hamburger()), row, col); break;
 								default: System.out.println("Error");
 							}
 							
