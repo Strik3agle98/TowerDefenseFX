@@ -5,13 +5,14 @@ import javafx.scene.image.Image;
 //parent class for all target
 public class Target {
 	private String name = "Target";
-	private int health;
+	private int health = 100;
 	private Image image;
+	
 	double x = 0, y = 0;
-	double dx = 0.001;
+	double dx = 0.1;
 	
 	public Target() {
-		
+	
 	}
 	public Target(String name) {
 		this.setName(name);
@@ -54,7 +55,8 @@ public class Target {
 		return x;
 	}
 	public void setX(double x) {
-		this.x = x;
+		if(x < 0) this.x = 0;
+		else this.x = x;
 	}
 	public double getY() {
 		return y;
@@ -63,11 +65,12 @@ public class Target {
 		this.y = y;
 	}
 	public void update() {
-		if(!isDead()) {
+		if(isDead()) {
 			
 		}
 		else {
 			setX(getX() - dx);
 		}
+		System.out.println("target x : " + getX() + " , y : " + getY());
 	}
 }

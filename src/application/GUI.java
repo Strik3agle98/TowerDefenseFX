@@ -19,7 +19,6 @@ public class GUI extends Application {
 	private static Scene sc_Settings;
 	private static Scene sc_MainMenu;
 	private static Scene sc_Scoreboard;
-	private static Scene sc_GameScreen;
 	private static Scene sc_NameEntering;
 	private static int Score = 0;
 	public static Stage getStage() {
@@ -36,9 +35,6 @@ public class GUI extends Application {
 	}
 	public static Scene getSceneOfScoreboard() {
 		return sc_Scoreboard;
-	}
-	public static Scene getSceneOfGameScreen() {
-		return sc_GameScreen;
 	}
 	public static Data getData() {
 		return data;
@@ -58,7 +54,7 @@ public class GUI extends Application {
 			sc_MainMenu = new Scene(mainMenu,W,H);
 			sc_Settings = new Scene(settings, W,H);
 			sc_Scoreboard = new Scene(scoreboard,W,H);
-			sc_GameScreen = new Scene(gameScreen,W,H,Color.DARKGREEN);
+			
 			sc_NameEntering = new Scene(nameEntering,W,H);
 			SceneManager sceneManager = new SceneManager();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

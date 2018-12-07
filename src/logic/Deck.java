@@ -65,7 +65,7 @@ public class Deck extends GridPane{
 			
 			//gc.fillRect(0, 0, c.getWidth(), c.getHeight());
 			//gc.strokeRect(0, 0, c.getWidth(), c.getHeight());
-		
+			
 			add(c,i,0);
 			setStyle("-fx-grid-lines-visible: true");
 		}

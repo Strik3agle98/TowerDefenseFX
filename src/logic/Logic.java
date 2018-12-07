@@ -11,8 +11,8 @@ public class Logic {
 	
 	public Logic() {
 		gameScreen = new GameScreen();
-		Target t1 = new Target("Zombie_1");
-		Target t2 = new Target("Zombie_1");
+		Target t1 = new Target("Target_1");
+		Target t2 = new Target("Target_1");
 		gameScreen.getField().addTarget(t1);
 		gameScreen.getField().addTarget(t2);
 		
@@ -22,12 +22,16 @@ public class Logic {
 		AnimationTimer animation = new AnimationTimer() {
 			@Override
 			public void handle(long now) {
+				System.out.println("time : " + now);
+				
 				Field.update();
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+//				try {
+//					Thread.sleep(1000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+				//Field.getCanvas().clear();
 			}
 		};
 		animation.start();

@@ -59,13 +59,15 @@ public abstract class Tower {
 		return this.x;
 	}
 	public void setX(double x) {
-		this.x = x;
+		if(x < 0) this.x = 0;
+		else this.x = x;
 	}
 	public double getY() {
 		return this.y;
 	}
 	public void setY(double y) {
-		this.y = y;
+		if(y < 0) this.y = 0;
+		else this.y = y;
 	}
 	public int getHealth() {
 		return health;
