@@ -4,15 +4,26 @@ import javafx.scene.image.Image;
 
 //parent class for all target
 public class Target {
-	private String name;
+	private String name = "Target";
 	private int health;
-	private int speed;
 	private Image image;
-	public Target(String name,int health, int speed) {
-		this.health = health;
-		this.speed = speed;
+	double x = 0, y = 0;
+	double dx = 0.001;
+	
+	public Target() {
+		
 	}
 	public Target(String name) {
+		this.setName(name);
+	}
+	public Target(String name,int health) {
+		this.setName(name);
+		this.health = health;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
 		this.name = name;
 	}
 	public int getHealth() {
@@ -24,12 +35,14 @@ public class Target {
 		else this.health = amount;
 	}
 	
-	public int getSpeed() {
-		return speed;
+	public double getdx() {
+		return dx;
 	}
-	
-	public void setSpeed(int speed) {
-		this.speed = speed;
+	public void setdx(double dx) {
+		this.dx = dx;
+	}
+	public boolean isDead() {
+		return this.health <= 0;
 	}
 	public Image getImage() {
 		return this.image;
@@ -37,7 +50,24 @@ public class Target {
 	public void setImage(Image img) {
 		image = img;
 	}
+	public double getX() {
+		return x;
+	}
+	public void setX(double x) {
+		this.x = x;
+	}
+	public double getY() {
+		return y;
+	}
+	public void setY(double y) {
+		this.y = y;
+	}
 	public void update() {
-		
+		if(!isDead()) {
+			
+		}
+		else {
+			setX(getX() - dx);
+		}
 	}
 }

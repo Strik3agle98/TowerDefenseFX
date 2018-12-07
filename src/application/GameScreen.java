@@ -19,8 +19,8 @@ public class GameScreen extends StackPane{
 	public GameScreen() {
 		gameUIController = new GameUIController();
 		field = new Field();
-		
 		getChildren().addAll(field,gameUIController);
+		
 	}
 	public Field getField() {
 		return this.field;

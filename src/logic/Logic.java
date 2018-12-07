@@ -8,16 +8,15 @@ import javafx.animation.AnimationTimer;
 
 public class Logic {
 	private GameScreen gameScreen;
-	ArrayList<Target> targets = new ArrayList<Target>();
-	ArrayList<Tower> towers = new ArrayList<Tower>();
+	
 	public Logic() {
 		gameScreen = new GameScreen();
 		Target t1 = new Target("Zombie_1");
 		Target t2 = new Target("Zombie_1");
-		targets.add(t1);
-		targets.add(t2);
-		gameScreen.getField().addTarget(2);
-		gameScreen.getField().addTarget(3);
+		Field.getTargets().add(t1);
+		Field.getTargets().add(t2);
+		gameScreen.getField().addTarget(t1);
+		gameScreen.getField().addTarget(t2);
 		
 		startGameLoop();
 	}
