@@ -61,7 +61,6 @@ public class GUI extends Application {
 			sc_GameScreen = new Scene(gameScreen,W,H,Color.DARKGREEN);
 			sc_NameEntering = new Scene(nameEntering,W,H);
 			SceneManager sceneManager = new SceneManager();
-			new Logic();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			data = new Data(new ArrayList<User>());
 			primaryStage.setScene(sc_MainMenu);

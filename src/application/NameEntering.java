@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import logic.Logic;
 import javafx.scene.layout.HBox;
 public class NameEntering extends VBox{
 	private TextField name;
@@ -45,6 +46,7 @@ public class NameEntering extends VBox{
 				User new_user = new User(name.getText());
 				GUI.getData().addUser(new_user);
 				//save name and load game....
+				new Logic();
 				GUI.getStage().setScene(GUI.getSceneOfGameScreen());
 			}
 		});

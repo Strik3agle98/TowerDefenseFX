@@ -1,5 +1,6 @@
 package logic;
 
+import application.Field;
 import javafx.scene.image.Image;
 
 //parent class for all tower
@@ -31,9 +32,9 @@ public abstract class Tower {
 		this.y = y;
 	}
 	
-	public void fire() {
+	public void fire(Tower tower) {
 		Bullet bullet = new Bullet();
-		
+		Field.addBullet(bullet);
 	}
 	//getter and setter
 	public int getFirepower() {
@@ -80,7 +81,7 @@ public abstract class Tower {
 			
 		}
 		else {
-			fire();
+			
 		}
 	}
 }

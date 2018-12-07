@@ -14,6 +14,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import logic.Deck;
+import logic.Frenchfries;
+import logic.Hamburger;
+import logic.IceCream;
+import logic.Tower;
 
 public class Map extends GridPane{
 	public Map() {
@@ -97,7 +101,15 @@ public class Map extends GridPane{
 						boolean success = false;
 						if (db.hasString()) {
 							System.out.println("GOT " + db.getString() + " at row : " + getRowIndex(c) + ", at column : " + getColumnIndex(c));
-							Field.setTable(getRowIndex(c),getColumnIndex(c),Integer.parseInt(db.getString().substring(6, 7)));
+							//Field.setTable(getRowIndex(c),getColumnIndex(c),Integer.parseInt(db.getString().substring(6, 7)));
+							int row = getRowIndex(c), col = getColumnIndex(c);
+							switch(Integer.parseInt(db.getString().substring(6, 7))) {
+								case 1: Field.addTower((Tower)(new Frenchfries()), row, col); break;
+								case 2: Field.addTower((Tower)(new IceCream()), row, col); break;
+								case 3:Field.addTower((Tower)(new Hamburger()), row, col); break;
+								default: System.out.println("Error");
+							}
+							
 							success = true;
 							//c.getGraphicsContext2D().setFill(Color.BLACK);
 							//c.getGraphicsContext2D().fillRect(0, 0, c.getWidth(),c.getHeight());

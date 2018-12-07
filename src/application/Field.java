@@ -17,7 +17,7 @@ import logic.*;
 import java.util.Random;
 
 public class Field extends GridPane{
-	private Canvas battlefield;
+	private static Canvas battlefield;
 	private static ArrayList<Target> targets = new ArrayList<Target>();
 	private static ArrayList<Tower> towers = new ArrayList<Tower>();
 	private static ArrayList<Bullet> bullets = new ArrayList<Bullet>();
@@ -33,13 +33,17 @@ public class Field extends GridPane{
 		setPadding(new Insets(10,10,10,10));
 		getChildren().addAll(battlefield);
 	}
-	public boolean addTower(Tower tower,int row,int col) {
+	public static boolean addTower(Tower tower,int row,int col) {
 		if(table[row][col] == null) {
 			setTable(tower,row,col);
 			towers.add(tower);
 			return true;
 		}
 		return false;
+	}
+	public static void addBullet(Bullet bullet) {
+		// TODO Auto-generated method stub
+
 	}
 	public void addTarget(Target target) {
 		Random rand = new Random();
@@ -51,6 +55,14 @@ public class Field extends GridPane{
 	public void addTargets(ArrayList<Target> targets) {
 		for(Target t : targets) {
 			addTarget(t);
+		}
+	}
+	public static void display(Object o) {
+		if(o instanceof Tower) {
+			battlefield.getGraphicsContext2D().drawImage(((Tower)o).getImage(), ((Tower)o).getX(), ((Tower)o).getY());
+		}
+		else if(o instanceof Target) {
+			battlefield.getGraphicsContext2D().drawImage(((Target)o).getImage(), ((Target)o).getX(), ((Target)o).getY());
 		}
 	}
 	public static Tower getTable(int x,int y) {
@@ -89,12 +101,24 @@ public class Field extends GridPane{
 			if(target.isDead()) {
 				targets.remove(target);
 			}
+			else {
+				display((Object)target);
+			}
 		}
 		for(Tower tower : towers) {
 			tower.update();
 			if(tower.isDead()) {
 				towers.remove(tower);
 			}
+			else {
+				display(tower);
+			}
 		}
+//		for(Bullet bullet : bullets) {
+//			for(Target target : targets) {
+//				//TODO: check collision
+//			}
+//		}
 	}
+	
 }
