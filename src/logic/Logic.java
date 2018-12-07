@@ -13,8 +13,6 @@ public class Logic {
 		gameScreen = new GameScreen();
 		Target t1 = new Target("Zombie_1");
 		Target t2 = new Target("Zombie_1");
-		Field.getTargets().add(t1);
-		Field.getTargets().add(t2);
 		gameScreen.getField().addTarget(t1);
 		gameScreen.getField().addTarget(t2);
 		

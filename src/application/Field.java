@@ -21,25 +21,22 @@ public class Field extends GridPane{
 	private static ArrayList<Target> targets = new ArrayList<Target>();
 	private static ArrayList<Tower> towers = new ArrayList<Tower>();
 	private static ArrayList<Bullet> bullets = new ArrayList<Bullet>();
-	private static int[][] table = {
-			{0,0,0,0,0,0,0,0},
-			{0,0,0,0,0,0,0,0},
-			{0,0,0,0,0,0,0,0},
-			{0,0,0,0,0,0,0,0},
-			{0,0,0,0,0,0,0,0}
+	private static Tower[][] table = {
+			{null,null,null,null,null,null,null,null},
+			{null,null,null,null,null,null,null,null},
+			{null,null,null,null,null,null,null,null},
+			{null,null,null,null,null,null,null,null},
+			{null,null,null,null,null,null,null,null}
 	};
 	public Field() {
 		battlefield = new Canvas(1200,650);
-		
 		setPadding(new Insets(10,10,10,10));
-		
 		getChildren().addAll(battlefield);
-		
 	}
-	public boolean addTower(int row,int col) {
-		if(table[row][col] == 0) {
-			setTable(row,col,1);
-			
+	public boolean addTower(Tower tower,int row,int col) {
+		if(table[row][col] == null) {
+			setTable(tower,row,col);
+			towers.add(tower);
 			return true;
 		}
 		return false;
@@ -49,18 +46,18 @@ public class Field extends GridPane{
 		int row = rand.nextInt() % 5;
 		target.setX(1100);
 		target.setY(65 * (row + 1));
+		targets.add(target);
 	}
 	public void addTargets(ArrayList<Target> targets) {
 		for(Target t : targets) {
 			addTarget(t);
 		}
 	}
-	public static int getTable(int x,int y) {
+	public static Tower getTable(int x,int y) {
 		return table[x][y];
 	}
-	public static void setTable(int x,int y,int z) {
-		table[x][y] = z;
-		
+	public static void setTable(Tower tower,int x,int y) {
+		table[x][y] = tower;
 	}
 	public Canvas getBattlefield() {
 		return battlefield;
@@ -79,6 +76,12 @@ public class Field extends GridPane{
 	}
 	public static void setTowers(ArrayList<Tower> towers) {
 		Field.towers = towers;
+	}
+	public static ArrayList<Bullet> getBullets() {
+		return bullets;
+	}
+	public static void setBullets(ArrayList<Bullet> bullets) {
+		Field.bullets = bullets;
 	}
 	public static void update() {
 		for(Target target : targets) {
