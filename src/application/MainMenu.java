@@ -6,14 +6,19 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 
 public class MainMenu extends VBox{
 	Button play, settings, scoreboard;
+	Image FT;
+	ImageView FTView;
 	
 	public MainMenu() {
+		FT = new Image("FT_standby.gif");
+		FTView = new ImageView(FT);
 		play = new Button("Play");
 		settings = new Button("Settings");
 		scoreboard = new Button("Scoreboard");
@@ -51,7 +56,7 @@ public class MainMenu extends VBox{
 				+ "-fx-background-position: center center; "
 				+ "-fx-background-repeat: stretch; "
 				+ "-fx-background-size: 1400 1000;");
-		getChildren().addAll(play,settings,scoreboard);
+		getChildren().addAll(play,settings,scoreboard, FTView);
 	}
 	
 }
