@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 
 public class SceneManager {
 	public SceneManager() {
-		FieldController();
+		if(GUI.getSceneOfGameScreen() != null) FieldController();
 		
 	}
 	public void FieldController() {

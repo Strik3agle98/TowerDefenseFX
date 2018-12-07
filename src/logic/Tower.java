@@ -9,6 +9,7 @@ public abstract class Tower {
 	private int firepower;
 	private int reload;
 	private int health;
+	private int row, col;
 	private Image image;
 	double x = 0,y = 0;
 	public Tower(String name,int health, int firepower, int reload) {
@@ -74,6 +75,18 @@ public abstract class Tower {
 	}
 	public void setHealth(int health) {
 		this.health = health;
+	}
+	public int getRow() {
+		return row;
+	}
+	public void setRow(int row) {
+		this.row = row;
+	}
+	public int getCol() {
+		return col;
+	}
+	public void setCol(int col) {
+		this.col = col;
 	}
 	public boolean isDead() {
 		return this.health <= 0;

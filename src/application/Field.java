@@ -21,6 +21,7 @@ public class Field extends GridPane{
 	private static ArrayList<Target> targets = new ArrayList<Target>();
 	private static ArrayList<Tower> towers = new ArrayList<Tower>();
 	private static ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+	private int[] enemyCount = {0, 0, 0, 0, 0};
 	private static Tower[][] table = {
 			{null,null,null,null,null,null,null,null},
 			{null,null,null,null,null,null,null,null},
@@ -31,8 +32,8 @@ public class Field extends GridPane{
 	public Field() {
 		battlefield = new Canvas(1200,650);
 		System.out.println(battlefield.hashCode());
-		battlefield.getGraphicsContext2D().setFill(Color.BROWN);
-		battlefield.getGraphicsContext2D().fillRect(10, 0, 1200, 650);
+		//battlefield.getGraphicsContext2D().setFill(Color.BROWN);
+		//battlefield.getGraphicsContext2D().fillRect(10, 0, 1200, 650);
 		setPadding(new Insets(10,10,10,10));
 		getChildren().addAll(battlefield);
 		System.out.println(battlefield.hashCode());
@@ -41,6 +42,12 @@ public class Field extends GridPane{
 		if(table[row][col] == null) {
 			setTable(tower,row,col);
 			towers.add(tower);
+			tower.setRow(row);
+			tower.setCol(col);
+			tower.setY(130 * row + 20);
+			tower.setX(130 * col + 30);
+			System.out.println("Generated tower at row " + row + " ,col " + col);
+			
 			return true;
 		}
 		return false;
@@ -54,7 +61,9 @@ public class Field extends GridPane{
 		int row = rand.nextInt() % 5;
 		if(row < 0) row += 5;
 		target.setX(1100);
-		target.setY(130 * (row));
+		target.setY(130 * (row) + 20);
+		target.setRow(row);
+		enemyCount[row]++;
 		System.out.println("Generated target at row " + row);
 		targets.add(target);
 	}
@@ -66,18 +75,12 @@ public class Field extends GridPane{
 	public static void display(Object o) {
 		System.out.println("class entered");
 		if(o instanceof Tower) {
-			//battlefield.getGraphicsContext2D().drawImage(((Tower)o).getImage(), ((Tower)o).getX(), ((Tower)o).getY());
-			battlefield.getGraphicsContext2D().setFill(Color.RED);
-			battlefield.getGraphicsContext2D().fillRect(((Tower)o).getX(), ((Tower)o).getY(), 100, 100);
-			
+			System.out.println("Displaying tower at " + ((Tower)o).getX() + " " + ((Tower)o).getY());
+			battlefield.getGraphicsContext2D().drawImage(((Tower)o).getImage(), ((Tower)o).getX(), ((Tower)o).getY());
 		}
 		else if(o instanceof Target) {
-			System.out.println("Displaying target at " + ((Target)o).getX() + " " + ((Target)o).getY());
-			//battlefield.getGraphicsContext2D().drawImage(((Target)o).getImage(), ((Target)o).getX(), ((Target)o).getY());
-			battlefield.getGraphicsContext2D().setFill(Color.BLUE);
-			battlefield.getGraphicsContext2D().fillRect(0, 0, 120, 120);
-			
-			System.out.println("YES " + battlefield.hashCode());
+			//System.out.println("Displaying target at " + ((Target)o).getX() + " " + ((Target)o).getY());
+			battlefield.getGraphicsContext2D().drawImage(((Target)o).getImage(), ((Target)o).getX(), ((Target)o).getY());
 		}
 	}
 	public static Tower getTable(int x,int y) {
@@ -85,6 +88,12 @@ public class Field extends GridPane{
 	}
 	public static void setTable(Tower tower,int x,int y) {
 		table[x][y] = tower;
+	}
+	public int[] getEnemyCount() {
+		return enemyCount;
+	}
+	public void setEnemyCount(int[] enemyCount) {
+		this.enemyCount = enemyCount;
 	}
 	public Canvas getBattlefield() {
 		return battlefield;
@@ -111,26 +120,27 @@ public class Field extends GridPane{
 		Field.bullets = bullets;
 	}
 	public static void update() {
+		battlefield.getGraphicsContext2D().clearRect(0, 0, battlefield.getWidth(), battlefield.getHeight());
 		for(Target target : targets) {
 			target.update();
+			ArrayList<Target> t = new ArrayList<Target>();
 			if(target.isDead()) {
-				//targets.remove(target);
+				t.add(target);
 			}
 			else {
-				battlefield.getGraphicsContext2D().setFill(Color.RED);
-				battlefield.getGraphicsContext2D().fillRect(0, 0, 120, 120);
 				display((Object)target);
+				
 			}
 		}
-//		for(Tower tower : towers) {
-//			tower.update();
-//			if(tower.isDead()) {
-//				towers.remove(tower);
-//			}
-//			else {
-//				display(tower);
-//			}
-//		}
+		for(Tower tower : towers) {
+			tower.update();
+			if(tower.isDead()) {
+				//towers.remove(tower);
+			}
+			else {
+				display(tower);
+			}
+		}
 //		for(Bullet bullet : bullets) {
 //			for(Target target : targets) {
 //				//TODO: check collision

@@ -13,13 +13,14 @@ import javafx.scene.paint.Color;
 
 
 public class GUI extends Application {
-	private static final int W = 1200, H = 800;
+	public static final int W = 1200, H = 800;
 	private static Data data;
 	private static Stage guiStage;
 	private static Scene sc_Settings;
 	private static Scene sc_MainMenu;
 	private static Scene sc_Scoreboard;
 	private static Scene sc_NameEntering;
+	private static Scene sc_GameScreen;
 	private static int Score = 0;
 	public static Stage getStage() {
 		return guiStage;
@@ -36,6 +37,12 @@ public class GUI extends Application {
 	public static Scene getSceneOfScoreboard() {
 		return sc_Scoreboard;
 	}
+	public static Scene getSceneOfGameScreen() {
+		return sc_GameScreen;
+	}
+	public static void setSceneOfGameScreen(Scene scene) {
+		sc_GameScreen = scene;
+	}
 	public static Data getData() {
 		return data;
 	}
@@ -50,11 +57,9 @@ public class GUI extends Application {
 			Settings settings = new Settings();
 			Scoreboard scoreboard = new Scoreboard();
 			NameEntering nameEntering = new NameEntering();
-			GameScreen gameScreen = new GameScreen();
 			sc_MainMenu = new Scene(mainMenu,W,H);
 			sc_Settings = new Scene(settings, W,H);
 			sc_Scoreboard = new Scene(scoreboard,W,H);
-			
 			sc_NameEntering = new Scene(nameEntering,W,H);
 			SceneManager sceneManager = new SceneManager();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

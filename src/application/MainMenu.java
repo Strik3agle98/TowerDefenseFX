@@ -17,7 +17,7 @@ public class MainMenu extends VBox{
 	ImageView FTView;
 	
 	public MainMenu() {
-		FT = new Image("FT_standby.gif");
+		FT = new Image("Tower_1_Standby.gif");
 		FTView = new ImageView(FT);
 		play = new Button("Play");
 		settings = new Button("Settings");

@@ -11,8 +11,8 @@ public class Logic {
 	
 	public Logic() {
 		gameScreen = new GameScreen();
-		Target t1 = new Target("Target_1");
-		Target t2 = new Target("Target_1");
+		Target t1 = ((Target) new Broccoli());
+		Target t2 = ((Target) new Broccoli());
 		gameScreen.getField().addTarget(t1);
 		gameScreen.getField().addTarget(t2);
 		

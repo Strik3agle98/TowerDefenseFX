@@ -7,9 +7,9 @@ public class Target {
 	private String name = "Target";
 	private int health = 100;
 	private Image image;
-	
+	private int row;
 	double x = 0, y = 0;
-	double dx = 0.1;
+	double dx = 1;
 	
 	public Target() {
 	
@@ -64,6 +64,13 @@ public class Target {
 	public void setY(double y) {
 		this.y = y;
 	}
+	
+	public int getRow() {
+		return row;
+	}
+	public void setRow(int row) {
+		this.row = row;
+	}
 	public void update() {
 		if(isDead()) {
 			
@@ -71,6 +78,6 @@ public class Target {
 		else {
 			setX(getX() - dx);
 		}
-		System.out.println("target x : " + getX() + " , y : " + getY());
+		//System.out.println("target x : " + getX() + " , y : " + getY());
 	}
 }

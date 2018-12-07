@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -17,6 +18,7 @@ public class GameScreen extends StackPane{
 	private GameUIController gameUIController;
 	private Field field;
 	public GameScreen() {
+		GUI.setSceneOfGameScreen(new Scene(this,GUI.W,GUI.H));
 		gameUIController = new GameUIController();
 		field = new Field();
 		getChildren().addAll(field, gameUIController);
