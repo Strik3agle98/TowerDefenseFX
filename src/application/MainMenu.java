@@ -15,14 +15,17 @@ public class MainMenu extends VBox{
 	Button play, settings, scoreboard;
 	Image FT;
 	ImageView FTView;
+	Image Play;
 	
 	public MainMenu() {
 		FT = new Image("Tower_1_Standby.gif");
 		FTView = new ImageView(FT);
+		Play = new Image("PLAY1.png");
 		play = new Button("Play");
 		settings = new Button("Settings");
 		scoreboard = new Button("Scoreboard");
-		play.setPrefSize(400, 50);
+		//play.setPrefSize(400, 50);
+		play.setGraphic(new ImageView(Play));
 		settings.setPrefSize(400,50);
 		scoreboard.setPrefSize(400,50);
 		setAlignment(Pos.CENTER);
