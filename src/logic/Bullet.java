@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 
 public class Bullet {
 	private double x,y;
+	private double dx = 5;
 	private int row;
 	private Image image;
 	public Bullet() {
@@ -27,7 +28,7 @@ public class Bullet {
 	}
 	public boolean isCollidingWith(Target target) {
 		if(this.row != target.getRow()) return false;
-		if((this.x - target.getX()) * (this.x - target.getX()) < 1){
+		if((this.x - target.getX()) * (this.x - target.getX()) < 10){
 			return true;
 		}
 		return false;
@@ -50,7 +51,13 @@ public class Bullet {
 	public void setY(double y) {
 		this.y = y;
 	}
+	public int getRow() {
+		return row;
+	}
+	public void setRow(int row) {
+		this.row = row;
+	}
 	public void update() {
-		setX(getX() + 0.001);
+		setX(getX() + dx);
 	}
 }

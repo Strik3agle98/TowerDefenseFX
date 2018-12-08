@@ -74,12 +74,15 @@ public class Field extends GridPane{
 	public static void display(Object o) {
 		System.out.println("class entered");
 		if(o instanceof Tower) {
-			System.out.println("Displaying tower at " + ((Tower)o).getX() + " " + ((Tower)o).getY());
+			//System.out.println("Displaying tower at " + ((Tower)o).getX() + " " + ((Tower)o).getY());
 			battlefield.getGraphicsContext2D().drawImage(((Tower)o).getImage(), ((Tower)o).getX(), ((Tower)o).getY());
 		}
 		else if(o instanceof Target) {
-			//System.out.println("Displaying target at " + ((Target)o).getX() + " " + ((Target)o).getY());
+			System.out.println("Displaying target at " + ((Target)o).getX() + " " + ((Target)o).getY() + "row " + ((Target)o).getRow());
 			battlefield.getGraphicsContext2D().drawImage(((Target)o).getImage(), ((Target)o).getX(), ((Target)o).getY());
+		}
+		else if(o instanceof Bullet) {
+			battlefield.getGraphicsContext2D().drawImage(((Bullet)o).getImage(), ((Bullet)o).getX(), ((Bullet)o).getY());
 		}
 	}
 	public Tower[][] getTable(){
@@ -135,6 +138,7 @@ public class Field extends GridPane{
 			}
 		}
 		bullets.removeAll(t);
+
 	}
 	public static void update() {
 		battlefield.getGraphicsContext2D().clearRect(0, 0, battlefield.getWidth(), battlefield.getHeight());
@@ -156,6 +160,15 @@ public class Field extends GridPane{
 			}
 			else {
 				display((Object)tower);
+			}
+		}
+		for(Bullet bullet : bullets) {
+			if(bullet.getX() >= battlefield.getWidth()) {
+				t.add((Object)bullet);
+			}
+			else {
+				bullet.update();
+				display((Object)bullet);
 			}
 		}
 		targets.removeAll(t);

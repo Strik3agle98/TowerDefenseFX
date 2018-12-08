@@ -75,9 +75,9 @@ public class Map extends GridPane{
 							//Field.setTable(getRowIndex(c),getColumnIndex(c),Integer.parseInt(db.getString().substring(6, 7)));
 							int row = getRowIndex(c), col = getColumnIndex(c);
 							switch(Integer.parseInt(db.getString().substring(6, 7))) {
-								case 1: Field.addTower((Tower)(new Frenchfries()), row, col); break;
-								case 2: Field.addTower((Tower)(new IceCream()), row, col); break;
-								case 3: Field.addTower((Tower)(new Hamburger()), row, col); break;
+								case 1: Field.addTower((Tower)(new Frenchfries(row,col)), row, col); break;
+								case 2: Field.addTower((Tower)(new IceCream(row,col)), row, col); break;
+								case 3: Field.addTower((Tower)(new Hamburger(row,col)), row, col); break;
 								default: System.out.println("Error");
 							}
 							

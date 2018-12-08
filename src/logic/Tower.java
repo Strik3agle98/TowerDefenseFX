@@ -84,11 +84,6 @@ public abstract class Tower {
 		return this.health <= 0;
 	}
 	public void update() {
-		if(!isDead()) {
-			
-		}
-		else {
-			
-		}
+		
 	}
 }

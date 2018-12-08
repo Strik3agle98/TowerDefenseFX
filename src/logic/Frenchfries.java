@@ -7,10 +7,11 @@ public class Frenchfries extends Tower implements Shootable{
 	private int shootingSpeed;
 	private Thread shootingThread;
 	private Thread reloadThread;
-	public Frenchfries(){
+	public Frenchfries(int row,int col){
 		super("Frenchfries", 100,20);
 		super.setImage(new Image("Tower_1_Standby.gif"));
-		
+		super.setRow(row);
+		super.setCol(col);
 		startShooting();
 	}
 	@Override
@@ -46,7 +47,7 @@ public class Frenchfries extends Tower implements Shootable{
 		this.reloadThread = reloadThread;
 	}
 	public static void reload() {
-		new ReloadThread().start();
+		//new ReloadThread().start();
 	}
 }
 class ReloadThread extends Thread {
@@ -66,14 +67,15 @@ class ShootingThread extends Thread {
 	public void run() {
 		while(true) {
 			for(int i = 0; i < 3; i++) {
-				System.out.println("Shooting");
+				//System.out.println("Shooting");
 				FrenchFryBullet frenchFryBullet = new FrenchFryBullet();
-				frenchFryBullet.setX(this.frenchfries.x);
-				frenchFryBullet.setY(this.frenchfries.y);
+				frenchFryBullet.setX(this.frenchfries.x + 30);
+				frenchFryBullet.setY(this.frenchfries.y + 30);
+				frenchFryBullet.setRow(this.frenchfries.getRow());
 				Field.addBullet(frenchFryBullet);
 				
 				try {
-					Thread.sleep(100);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					System.out.println("Shooting Interrupted");
 				}
