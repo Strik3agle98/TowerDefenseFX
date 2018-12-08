@@ -39,7 +39,7 @@ public abstract class Tower {
 	}
 	//getter and setter
 	public int getFirepower() {
-		return firepower; 
+		return firepower;
 	}
 	public void setFirepower(int power) {
 		this.firepower = power;

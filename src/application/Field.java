@@ -83,6 +83,12 @@ public class Field extends GridPane{
 			battlefield.getGraphicsContext2D().drawImage(((Target)o).getImage(), ((Target)o).getX(), ((Target)o).getY());
 		}
 	}
+	public Tower[][] getTable(){
+		return Field.table;
+	}
+	public void setTable(Tower[][] table) {
+		Field.table = table;
+	}
 	public static Tower getTable(int x,int y) {
 		return table[x][y];
 	}
@@ -119,33 +125,42 @@ public class Field extends GridPane{
 	public static void setBullets(ArrayList<Bullet> bullets) {
 		Field.bullets = bullets;
 	}
+	public static void checkCollision() {
+		ArrayList<Bullet> t = new ArrayList<Bullet>();
+		for(Bullet bullet : bullets) {
+			for(Target target : targets) {
+				if(bullet.isCollidingWith(target)) {
+					target.takeDamage(20);
+					t.add(bullet);
+				}
+			}
+		}
+		bullets.removeAll(t);
+	}
 	public static void update() {
 		battlefield.getGraphicsContext2D().clearRect(0, 0, battlefield.getWidth(), battlefield.getHeight());
+		checkCollision();
+		ArrayList<Object> t = new ArrayList<Object>();
 		for(Target target : targets) {
 			target.update();
-			ArrayList<Target> t = new ArrayList<Target>();
 			if(target.isDead()) {
-				t.add(target);
+				t.add((Object)target);
 			}
 			else {
 				display((Object)target);
-				
 			}
 		}
 		for(Tower tower : towers) {
 			tower.update();
 			if(tower.isDead()) {
-				//towers.remove(tower);
+				t.add((Object)tower);
 			}
 			else {
-				display(tower);
+				display((Object)tower);
 			}
 		}
-//		for(Bullet bullet : bullets) {
-//			for(Target target : targets) {
-//				//TODO: check collision
-//			}
-//		}
+		targets.removeAll(t);
+		towers.removeAll(t);
 	}
 	
 }

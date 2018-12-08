@@ -21,6 +21,9 @@ public class Target {
 		this.setName(name);
 		this.health = health;
 	}
+	public void takeDamage(int val) {
+		health -= val;
+	}
 	public String getName() {
 		return name;
 	}
@@ -72,12 +75,7 @@ public class Target {
 		this.row = row;
 	}
 	public void update() {
-		if(isDead()) {
-			
-		}
-		else {
-			setX(getX() - dx);
-		}
+		setX(getX() - dx);
 		//System.out.println("target x : " + getX() + " , y : " + getY());
 	}
 }
