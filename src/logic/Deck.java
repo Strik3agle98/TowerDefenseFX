@@ -22,10 +22,10 @@ public class Deck extends GridPane{
 		drawCurrentScoreString(score.getGraphicsContext2D());
 		add(score,0,0);
 		for(int i = 1; i <= 3; i++) {
-			Canvas c = new Canvas(100,100);
+			Canvas c = new Canvas(100,130);
 			c.setCursor(Cursor.HAND);
-			System.out.println("Tower_" + i + ".png");
-			c.getGraphicsContext2D().drawImage(new Image("Tower_" + i + ".png"), 20, 20);
+			System.out.println("Card_" + i + ".png");
+			c.getGraphicsContext2D().drawImage(new Image("Card_" + i + ".png"), 0, 0, 100, 130);
 			
 			c.setOnDragDetected((t)->{
 				System.out.println("Drag Detected");

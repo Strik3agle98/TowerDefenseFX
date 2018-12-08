@@ -26,8 +26,9 @@ public class MainMenu extends VBox{
 		play = new Button("");
 		settings = new Button("Settings");
 		scoreboard = new Button("Scoreboard");
-		//play.setPrefSize(400, 50);
-		play.setGraphic(new ImageView(Play));
+		play.setPrefSize(400, 50);
+		//play.setGraphic(new ImageView(Play));
+		play.setStyle("-fx-background-image: url('PLAY1.png')");
 		settings.setPrefSize(400,50);
 		scoreboard.setPrefSize(400,50);
 		setAlignment(Pos.CENTER);
@@ -57,7 +58,7 @@ public class MainMenu extends VBox{
 		scoreboard.setCursor(Cursor.HAND);
 		//getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		
-		setStyle("-fx-background-image: url('background_0.jpg'); "
+		setStyle("-fx-background-image: url('nyancat.gif'); "
 				+ "-fx-background-position: center center; "
 				+ "-fx-background-repeat: stretch; "
 				+ "-fx-background-size: 1400 1000;");

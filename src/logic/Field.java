@@ -33,8 +33,8 @@ public class Field extends GridPane{
 		battlefield = new Canvas(1200,650);
 		System.out.println(battlefield.hashCode());
 		//battlefield.getGraphicsContext2D().setFill(Color.BROWN);
-		//battlefield.getGraphicsContext2D().fillRect(0, 0, 1200, 650);
-		battlefield.setStyle("-fx-background-image: Field.jpg");
+		battlefield.getGraphicsContext2D().drawImage(new Image("Field.jpg"), 0, 0);
+		//battlefield.setStyle("-fx-background-image: Field.jpg");
 		setPadding(new Insets(10,10,10,10));
 		getChildren().addAll(battlefield);
 		System.out.println(battlefield.hashCode());
@@ -149,6 +149,7 @@ public class Field extends GridPane{
 				((ShootingTower)tower).update();
 			if(tower.isDead()) {
 				t.add((Object)tower);
+				table[tower.getRow()][tower.getCol()] = null;
 			}
 			else {
 				display((Object)tower);
