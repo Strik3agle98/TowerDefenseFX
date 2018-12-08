@@ -21,11 +21,11 @@ public class Deck extends GridPane{
 		score = new Canvas(100,100);
 		drawCurrentScoreString(score.getGraphicsContext2D());
 		add(score,0,0);
-		for(int i = 1; i <= 7; i++) {
+		for(int i = 1; i <= 3; i++) {
 			Canvas c = new Canvas(100,100);
 			c.setCursor(Cursor.HAND);
-			System.out.println("Card_" + i + ".png");
-			c.getGraphicsContext2D().drawImage(new Image("Card_" + i + ".png"), 0, 0, 100, 100);
+			System.out.println("Tower_" + i + ".png");
+			c.getGraphicsContext2D().drawImage(new Image("Tower_" + i + ".png"), 20, 20);
 			
 			c.setOnDragDetected((t)->{
 				System.out.println("Drag Detected");
@@ -44,8 +44,8 @@ public class Deck extends GridPane{
 			//gc.strokeRect(0, 0, c.getWidth(), c.getHeight());
 			
 			add(c,i,0);
-			setStyle("-fx-grid-lines-visible: true");
 		}
+		setStyle("-fx-grid-lines-visible: true");
 		setPadding(new Insets(10,10,10,10));
 		
 	}
