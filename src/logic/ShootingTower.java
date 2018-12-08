@@ -82,10 +82,12 @@ public class ShootingTower extends Tower implements Shootable{
 	public void update() {
 		if(Field.getEnemyCount(super.getRow()) != 0 && !isShooting) {
 			startShooting();
+			super.setInAttackingState(true);
 			isShooting = true;
 		}
 		else if(Field.getEnemyCount(super.getRow()) == 0 && isShooting) {
 			stopShooting();
+			super.setInAttackingState(false);
 			isShooting = false;
 		}
 	}
