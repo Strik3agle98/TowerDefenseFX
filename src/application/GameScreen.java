@@ -8,6 +8,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -17,11 +19,17 @@ import javafx.scene.shape.Rectangle;
 public class GameScreen extends StackPane{
 	private GameUIController gameUIController;
 	private Field field;
+	private Image FIMG;
+	private ImageView FIMGV;
+	
 	public GameScreen() {
 		GUI.setSceneOfGameScreen(new Scene(this,GUI.W,GUI.H));
 		gameUIController = new GameUIController();
 		field = new Field();
-		getChildren().addAll(field, gameUIController);
+		FIMG = new Image("Field.jpg");
+		FIMGV = new ImageView(FIMG);
+		
+		getChildren().addAll(FIMGV, field, gameUIController);
 		
 	}
 	public Field getField() {
