@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import logic.Logic;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -61,12 +62,22 @@ public class GUI extends Application {
 			sc_Settings = new Scene(settings, W,H);
 			sc_Scoreboard = new Scene(scoreboard,W,H);
 			sc_NameEntering = new Scene(nameEntering,W,H);
-			SceneManager sceneManager = new SceneManager();
+			//SceneManager sceneManager = new SceneManager();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			data = new Data(new ArrayList<User>());
 			primaryStage.setScene(sc_MainMenu);
 			primaryStage.show();
 			primaryStage.setTitle("TowerDefense");
+			guiStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
+				@Override
+				public void handle(WindowEvent event) {
+					try {
+						stop();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -74,5 +85,6 @@ public class GUI extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		
 	}
 }

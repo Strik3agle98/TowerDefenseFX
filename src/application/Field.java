@@ -53,8 +53,7 @@ public class Field extends GridPane{
 		return false;
 	}
 	public static void addBullet(Bullet bullet) {
-		// TODO Auto-generated method stub
-		
+		bullets.add(bullet);
 	}
 	public void addTarget(Target target) {
 		Random rand = new Random();

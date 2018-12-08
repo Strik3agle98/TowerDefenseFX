@@ -6,17 +6,15 @@ import javafx.scene.image.Image;
 //parent class for all tower
 public abstract class Tower {
 	String name = "Tower";
-	private int firepower;
-	private int reload;
+	private int damage;
 	private int health;
 	private int row, col;
 	private Image image;
 	double x = 0,y = 0;
-	public Tower(String name,int health, int firepower, int reload) {
+	public Tower(String name,int health,int damage) {
 		this.name = name;
 		this.health = health;
-		this.firepower = firepower;
-		this.reload = reload;
+		this.setDamage(damage);
 	}
 	public Tower() {
 	}
@@ -38,18 +36,6 @@ public abstract class Tower {
 		Field.addBullet(bullet);
 	}
 	//getter and setter
-	public int getFirepower() {
-		return firepower;
-	}
-	public void setFirepower(int power) {
-		this.firepower = power;
-	}
-	public int getReload() {
-		return this.reload;
-	}
-	public void setReload(int reload) {
-		this.reload = reload;
-	}
 	public Image getImage() {
 		return this.image;
 	}
@@ -69,6 +55,12 @@ public abstract class Tower {
 	public void setY(double y) {
 		if(y < 0) this.y = 0;
 		else this.y = y;
+	}
+	public int getDamage() {
+		return damage;
+	}
+	public void setDamage(int damage) {
+		this.damage = damage;
 	}
 	public int getHealth() {
 		return health;

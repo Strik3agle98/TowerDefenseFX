@@ -16,7 +16,13 @@ public class GameUIController extends VBox{
 	public Deck getDeck() {
 		return deck;
 	}
+	public void setDeck(Deck deck) {
+		this.deck = deck;
+	}
 	public Map getMap() {
 		return map;
+	}
+	public void setMap(Map map) {
+		this.map = map;
 	}
 }
