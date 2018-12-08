@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 
@@ -21,7 +23,7 @@ public class MainMenu extends VBox{
 		FT = new Image("Tower_1_Standby.gif");
 		FTView = new ImageView(FT);
 		Play = new Image("PLAY1.png");
-		play = new Button("Play");
+		play = new Button("");
 		settings = new Button("Settings");
 		scoreboard = new Button("Scoreboard");
 		//play.setPrefSize(400, 50);

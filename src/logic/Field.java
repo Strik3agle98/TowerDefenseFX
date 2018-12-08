@@ -1,4 +1,4 @@
-package application;
+package logic;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ public class Field extends GridPane{
 	private static ArrayList<Target> targets = new ArrayList<Target>();
 	private static ArrayList<Tower> towers = new ArrayList<Tower>();
 	private static ArrayList<Bullet> bullets = new ArrayList<Bullet>();
-	private int[] enemyCount = {0, 0, 0, 0, 0};
+	private static int[] enemyCount = {0, 0, 0, 0, 0};
 	private static Tower[][] table = {
 			{null,null,null,null,null,null,null,null},
 			{null,null,null,null,null,null,null,null},
@@ -33,7 +33,8 @@ public class Field extends GridPane{
 		battlefield = new Canvas(1200,650);
 		System.out.println(battlefield.hashCode());
 		//battlefield.getGraphicsContext2D().setFill(Color.BROWN);
-		//battlefield.getGraphicsContext2D().fillRect(10, 0, 1200, 650);
+		//battlefield.getGraphicsContext2D().fillRect(0, 0, 1200, 650);
+		battlefield.setStyle("-fx-background-image: Field.jpg");
 		setPadding(new Insets(10,10,10,10));
 		getChildren().addAll(battlefield);
 		System.out.println(battlefield.hashCode());
@@ -72,7 +73,7 @@ public class Field extends GridPane{
 		}
 	}
 	public static void display(Object o) {
-		System.out.println("class entered");
+		//System.out.println("class entered");
 		if(o instanceof Tower) {
 			//System.out.println("Displaying tower at " + ((Tower)o).getX() + " " + ((Tower)o).getY());
 			battlefield.getGraphicsContext2D().drawImage(((Tower)o).getImage(), ((Tower)o).getX(), ((Tower)o).getY());
@@ -99,6 +100,10 @@ public class Field extends GridPane{
 	}
 	public int[] getEnemyCount() {
 		return enemyCount;
+	}
+	public static int getEnemyCount(int index) {
+		if(index < 0 || index > 4) return -1;
+		return enemyCount[index];
 	}
 	public void setEnemyCount(int[] enemyCount) {
 		this.enemyCount = enemyCount;
@@ -127,34 +132,21 @@ public class Field extends GridPane{
 	public static void setBullets(ArrayList<Bullet> bullets) {
 		Field.bullets = bullets;
 	}
-	public static void checkCollision() {
-		ArrayList<Bullet> t = new ArrayList<Bullet>();
-		for(Bullet bullet : bullets) {
-			for(Target target : targets) {
-				if(bullet.isCollidingWith(target)) {
-					target.takeDamage(20);
-					t.add(bullet);
-				}
-			}
-		}
-		bullets.removeAll(t);
-
-	}
-	public static void update() {
-		battlefield.getGraphicsContext2D().clearRect(0, 0, battlefield.getWidth(), battlefield.getHeight());
-		checkCollision();
+	public static void updateCharacterStatus() {
 		ArrayList<Object> t = new ArrayList<Object>();
 		for(Target target : targets) {
 			target.update();
 			if(target.isDead()) {
 				t.add((Object)target);
+				enemyCount[target.getRow()]--;
 			}
 			else {
 				display((Object)target);
 			}
 		}
 		for(Tower tower : towers) {
-			tower.update();
+			if(tower instanceof ShootingTower)
+				((ShootingTower)tower).update();
 			if(tower.isDead()) {
 				t.add((Object)tower);
 			}
@@ -173,6 +165,39 @@ public class Field extends GridPane{
 		}
 		targets.removeAll(t);
 		towers.removeAll(t);
+		bullets.removeAll(t);
+	}
+	public static void checkCollision() {
+		ArrayList<Bullet> t = new ArrayList<Bullet>();
+		for(Bullet bullet : bullets) {
+			for(Target target : targets) {
+				if(bullet.isCollidingWith(target)) {
+					target.takeDamage(20);
+					t.add(bullet);
+				}
+			}
+		}
+		bullets.removeAll(t);
+		for(Tower tower : towers) {
+			for(Target target : targets) {
+				if(tower.isCollidingWith(target)) {
+					
+					target.startAttacking(tower);
+					target.stopWalk();
+				}
+				else {
+					if(target.getRow() == tower.getRow()) {
+						target.startWalk();
+						target.stopAttacking();
+					}
+				}
+			}
+		}
+	}
+	public static void update() {
+		battlefield.getGraphicsContext2D().clearRect(0, 0, battlefield.getWidth(), battlefield.getHeight());
+		checkCollision();
+		updateCharacterStatus();
 	}
 	
 }

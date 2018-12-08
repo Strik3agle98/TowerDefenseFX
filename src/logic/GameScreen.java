@@ -1,6 +1,7 @@
-package application;
+package logic;
 import java.util.ArrayList;
 
+import application.GUI;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

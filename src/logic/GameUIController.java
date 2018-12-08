@@ -1,8 +1,7 @@
-package application;
+package logic;
 
 import javafx.geometry.Insets;
 import javafx.scene.layout.VBox;
-import logic.Deck;
 
 public class GameUIController extends VBox{
 	private Map map;

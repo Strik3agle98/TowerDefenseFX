@@ -1,4 +1,4 @@
-package application;
+package logic;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -13,11 +13,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import logic.Deck;
-import logic.Frenchfries;
-import logic.Hamburger;
-import logic.IceCream;
-import logic.Tower;
 
 public class Map extends GridPane{
 	public Map() {

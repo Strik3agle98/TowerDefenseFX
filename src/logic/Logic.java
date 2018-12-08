@@ -2,8 +2,6 @@ package logic;
 
 import java.util.ArrayList;
 
-import application.Field;
-import application.GameScreen;
 import javafx.animation.AnimationTimer;
 
 public class Logic {

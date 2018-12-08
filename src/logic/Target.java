@@ -6,13 +6,15 @@ import javafx.scene.image.Image;
 public class Target {
 	private String name = "Target";
 	private int health = 100;
-	private Image image;
+	private Image attackingImage,standbyImage;
 	private int row;
-	double x = 0, y = 0;
-	double dx = 1;
+	private int damage;
+	private boolean isInAttackingState = false;
+	private double x = 0, y = 0;
+	private double dx = 1;
 	
 	public Target() {
-	
+		
 	}
 	public Target(String name) {
 		this.setName(name);
@@ -21,8 +23,27 @@ public class Target {
 		this.setName(name);
 		this.health = health;
 	}
+	public void startAttacking(Tower tower) {
+		if(!isInAttackingState) {
+			
+			isInAttackingState = true;
+			attack(tower);
+		}
+	}
+	public void stopAttacking() {
+		isInAttackingState = false;
+	}
+	public void attack(Tower tower) {
+		tower.takeDamage(damage);
+	}
 	public void takeDamage(int val) {
 		health -= val;
+	}
+	public void startWalk() {
+		setdx(1);
+	}
+	public void stopWalk() {
+		setdx(0);
 	}
 	public String getName() {
 		return name;
@@ -49,10 +70,24 @@ public class Target {
 		return this.health <= 0;
 	}
 	public Image getImage() {
-		return this.image;
+		if(isInAttackingState) return attackingImage;
+		else return standbyImage;
 	}
-	public void setImage(Image img) {
-		image = img;
+	public void setImage(Image img1, Image img2) {
+		attackingImage = img1;
+		standbyImage = img2;
+	}
+	public Image getAttackingImage() {
+		return attackingImage;
+	}
+	public void setAttackingImage(Image image) {
+		attackingImage = image;
+	}
+	public Image getStandbyImage() {
+		return standbyImage;
+	}
+	public void setStandbyImage(Image image) {
+		standbyImage = image;
 	}
 	public double getX() {
 		return x;
@@ -67,12 +102,23 @@ public class Target {
 	public void setY(double y) {
 		this.y = y;
 	}
-	
+	public int getDamage() {
+		return damage;
+	}
+	public void setDamage(int damage) {
+		this.damage = damage;
+	}
 	public int getRow() {
 		return row;
 	}
 	public void setRow(int row) {
 		this.row = row;
+	}
+	public boolean isInAttackingState() {
+		return isInAttackingState;
+	}
+	public void setInAttackingState(boolean isInAttackingState) {
+		this.isInAttackingState = isInAttackingState;
 	}
 	public void update() {
 		setX(getX() - dx);
