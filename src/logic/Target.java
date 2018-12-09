@@ -10,7 +10,7 @@ public class Target {
 	private int countTimer = 0;
 	private Image attackingImage,standbyImage;
 	private int row;
-	private int attackSpeed = 10;
+	private int attackSpeed = 90;
 	private int damage = 20;
 	private boolean isInAttackingState = false;
 	private double x = 0, y = 0;

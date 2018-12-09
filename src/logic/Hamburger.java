@@ -2,7 +2,7 @@ package logic;
 
 import javafx.scene.image.Image;
 
-public class Hamburger extends Tower{
+public class Hamburger extends ShootingTower{
 	public Hamburger(int row,int col) {
 		super("Hamburger",200,100);
 		super.setImage(new Image("Tower_3_Attacking.gif"),new Image("Tower_3_Standby.gif"));
