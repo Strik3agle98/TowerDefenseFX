@@ -24,11 +24,13 @@ public class MainMenu extends VBox{
 		FTView = new ImageView(FT);
 		Play = new Image("PLAY1.png");
 		play = new Button("");
-		settings = new Button("Settings");
-		scoreboard = new Button("Scoreboard");
+		settings = new Button("");
+		scoreboard = new Button("");
 		play.setPrefSize(400, 50);
 		//play.setGraphic(new ImageView(Play));
 		play.setStyle("-fx-background-image: url('PLAY1.png')");
+		settings.setStyle("-fx-background-image: url('SETTING.png')");
+		scoreboard.setStyle("-fx-background-image: url('SCOREBOARD.png')");
 		settings.setPrefSize(400,50);
 		scoreboard.setPrefSize(400,50);
 		setAlignment(Pos.CENTER);
