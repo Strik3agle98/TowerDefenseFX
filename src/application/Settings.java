@@ -53,7 +53,10 @@ public class Settings extends VBox {
 			}
 		});
 		back.setCursor(Cursor.HAND);
-		setStyle("-fx-background-color: skyblue");
+		setStyle("-fx-background-image: url('BGL.jpg'); "
+				+ "-fx-background-position: center center; "
+				+ "-fx-background-repeat: stretch; "
+				+ "-fx-background-size: 1200 800;");
 	}
 	
 }

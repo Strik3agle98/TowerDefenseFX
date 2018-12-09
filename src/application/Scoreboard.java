@@ -16,6 +16,10 @@ public class Scoreboard extends VBox{
 				GUI.getStage().setScene(GUI.getSceneOfMainMenu());
 			}
 		});
+		setStyle("-fx-background-image: url('BGL.jpg'); "
+				+ "-fx-background-position: center center; "
+				+ "-fx-background-repeat: stretch; "
+				+ "-fx-background-size: 1200 800;");
 		getChildren().addAll(back);
 	}
 }

@@ -56,6 +56,10 @@ public class NameEntering extends VBox{
 		setSpacing(20);
 		setPadding(new Insets(20,20,20,20));
 		setAlignment(Pos.CENTER);
+		setStyle("-fx-background-image: url('BGL.jpg'); "
+				+ "-fx-background-position: center center; "
+				+ "-fx-background-repeat: stretch; "
+				+ "-fx-background-size: 1200 800;");
 		getChildren().addAll(group1,group2);
 	}
 	

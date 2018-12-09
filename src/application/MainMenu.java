@@ -15,14 +15,10 @@ import javafx.event.ActionEvent;
 
 public class MainMenu extends VBox{
 	Button play, settings, scoreboard;
-	Image FT;
-	ImageView FTView;
-	Image Play;
+	//Image Play;
 	
 	public MainMenu() {
-		FT = new Image("Tower_1_Standby.gif");
-		FTView = new ImageView(FT);
-		Play = new Image("PLAY1.png");
+		//Play = new Image("PLAY1.png");
 		play = new Button("");
 		settings = new Button("");
 		scoreboard = new Button("");
@@ -60,11 +56,11 @@ public class MainMenu extends VBox{
 		scoreboard.setCursor(Cursor.HAND);
 		//getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		
-		setStyle("-fx-background-image: url('icecream4.gif'); "
+		setStyle("-fx-background-image: url('BG.gif'); "
 				+ "-fx-background-position: center center; "
 				+ "-fx-background-repeat: stretch; "
 				+ "-fx-background-size: 1200 800;");
-		getChildren().addAll(play,settings,scoreboard, FTView);
+		getChildren().addAll(play,settings,scoreboard);
 	}
 	
 }
