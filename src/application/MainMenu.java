@@ -58,10 +58,10 @@ public class MainMenu extends VBox{
 		scoreboard.setCursor(Cursor.HAND);
 		//getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		
-		setStyle("-fx-background-image: url('nyancat.gif'); "
+		setStyle("-fx-background-image: url('icecream4.gif'); "
 				+ "-fx-background-position: center center; "
 				+ "-fx-background-repeat: stretch; "
-				+ "-fx-background-size: 1400 1000;");
+				+ "-fx-background-size: 1200 800;");
 		getChildren().addAll(play,settings,scoreboard, FTView);
 	}
 	

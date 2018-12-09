@@ -22,6 +22,7 @@ public class GUI extends Application {
 	private static Scene sc_Scoreboard;
 	private static Scene sc_NameEntering;
 	private static Scene sc_GameScreen;
+	private static Scene sc_GameOver;
 	private static int Score = 0;
 	public static Stage getStage() {
 		return guiStage;
@@ -41,6 +42,9 @@ public class GUI extends Application {
 	public static Scene getSceneOfGameScreen() {
 		return sc_GameScreen;
 	}
+	public static Scene getSceneOfGameOver() {
+		return sc_GameOver;
+	}
 	public static void setSceneOfGameScreen(Scene scene) {
 		sc_GameScreen = scene;
 	}
@@ -58,10 +62,12 @@ public class GUI extends Application {
 			Settings settings = new Settings();
 			Scoreboard scoreboard = new Scoreboard();
 			NameEntering nameEntering = new NameEntering();
+			GameOver gameOver = new GameOver();
 			sc_MainMenu = new Scene(mainMenu,W,H);
 			sc_Settings = new Scene(settings, W,H);
 			sc_Scoreboard = new Scene(scoreboard,W,H);
 			sc_NameEntering = new Scene(nameEntering,W,H);
+			sc_GameOver = new Scene(gameOver,W,H);
 			//SceneManager sceneManager = new SceneManager();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			data = new Data(new ArrayList<User>());

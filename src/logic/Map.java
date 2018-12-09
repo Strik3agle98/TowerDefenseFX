@@ -67,7 +67,7 @@ public class Map extends GridPane{
 						boolean success = false;
 						if (db.hasString()) {
 							System.out.println("GOT " + db.getString() + " at row : " + getRowIndex(c) + ", at column : " + getColumnIndex(c));
-							//Field.setTable(getRowIndex(c),getColumnIndex(c),Integer.parseInt(db.getString().substring(6, 7)));
+							
 							int row = getRowIndex(c), col = getColumnIndex(c);
 							switch(Integer.parseInt(db.getString().substring(6, 7))) {
 								case 1: Field.addTower((Tower)(new Frenchfries(row,col)), row, col); break;

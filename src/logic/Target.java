@@ -1,5 +1,6 @@
 package logic;
 
+import application.GUI;
 import javafx.scene.image.Image;
 
 //parent class for all target
@@ -93,7 +94,9 @@ public class Target {
 		return x;
 	}
 	public void setX(double x) {
-		if(x < 0) this.x = 0;
+		if(x <= 1.0) {
+			GUI.getStage().setScene(GUI.getSceneOfGameOver());
+		}
 		else this.x = x;
 	}
 	public double getY() {

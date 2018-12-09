@@ -1,8 +1,11 @@
 package logic;
 
+import java.util.ArrayList;
+
 import application.GUI;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -15,14 +18,17 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
 public class Deck extends GridPane{
+	private ArrayList<Canvas> cards;
 	private double posX,posY,defaultX,defaultY;
 	private Canvas score;
 	public Deck() {
+		cards = new ArrayList<Canvas>();
 		score = new Canvas(100,100);
 		drawCurrentScoreString(score.getGraphicsContext2D());
 		add(score,0,0);
 		for(int i = 1; i <= 3; i++) {
 			Canvas c = new Canvas(100,130);
+			cards.add(c);
 			c.setCursor(Cursor.HAND);
 			System.out.println("Card_" + i + ".png");
 			c.getGraphicsContext2D().drawImage(new Image("Card_" + i + ".png"), 0, 0, 100, 130);
@@ -37,12 +43,6 @@ public class Deck extends GridPane{
 				t.consume();
 			});
 			GraphicsContext gc = c.getGraphicsContext2D();
-			gc.setStroke(Color.BLACK);
-			//gc.setFill(Color.YELLOW);
-			
-			//gc.fillRect(0, 0, c.getWidth(), c.getHeight());
-			//gc.strokeRect(0, 0, c.getWidth(), c.getHeight());
-			
 			add(c,i,0);
 		}
 		setStyle("-fx-grid-lines-visible: true");
@@ -54,5 +54,10 @@ public class Deck extends GridPane{
 		gc.setFont(new Font(40));
 		gc.clearRect(0, 0, this.score.getWidth(), this.score.getHeight());
 		gc.fillText("" + GUI.getScore(), this.score.getWidth() / 2, this.score.getWidth() / 2);
+	}
+	public void update() {
+		for(Node node : getChildren()) {
+			
+		}
 	}
 }
