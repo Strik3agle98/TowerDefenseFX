@@ -16,6 +16,7 @@ public class ShootingTower extends Tower implements Shootable{
 	@Override
 	public void startShooting() {
 		if(Field.getEnemyCount(getRow()) == 0) return;
+		
 		System.out.println("Started shooting");
 		if(countTimer > 10000) {
 			countTimer = 0;
