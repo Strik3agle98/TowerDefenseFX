@@ -181,14 +181,13 @@ public class Field extends GridPane{
 		for(Tower tower : towers) {
 			for(Target target : targets) {
 				if(tower.isCollidingWith(target)) {
-					
-					target.startAttacking(tower);
 					target.stopWalk();
+					target.startAttacking(tower);
 				}
 				else {
 					if(target.getRow() == tower.getRow()) {
-						target.startWalk();
 						target.stopAttacking();
+						target.startWalk();
 					}
 				}
 			}

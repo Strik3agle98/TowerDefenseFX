@@ -2,6 +2,8 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import logic.User;
 public class Data{
 	ArrayList<User> users;
 	public Data(ArrayList<User> u) {
