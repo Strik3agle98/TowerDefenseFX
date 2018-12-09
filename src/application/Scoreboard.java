@@ -9,7 +9,9 @@ public class Scoreboard extends VBox{
 	private Button back;
 	public Scoreboard() {
 		
-		back = new Button("Back");
+		back = new Button("");
+		back.setPrefSize(200, 50);
+		back.setStyle("-fx-background-image: url('BACK.png')");
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed back.");

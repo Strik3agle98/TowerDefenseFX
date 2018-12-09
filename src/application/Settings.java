@@ -30,7 +30,7 @@ public class Settings extends VBox {
 		mute_menu.setAlignment(Pos.CENTER_LEFT);
 		mute_menu.setPadding(new Insets(20,20,20,20));
 		mute_menu.setSpacing(20);
-		back = new Button("Back");
+		back = new Button("");
 		volume_menu = new HBox();
 		volume_menu.setPrefWidth(300);
 		volume_menu.setPadding(new Insets(20,20,20,20));
@@ -41,6 +41,8 @@ public class Settings extends VBox {
 		setSpacing(20);
 		volume_menu.getChildren().addAll(t2,volume_slider);
 		getChildren().addAll(volume_menu,mute_menu,back);
+		back.setPrefSize(200, 50);
+		back.setStyle("-fx-background-image: url('BACK.png')");
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed back.");
