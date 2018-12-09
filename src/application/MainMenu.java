@@ -61,6 +61,7 @@ public class MainMenu extends VBox{
 				+ "-fx-background-repeat: stretch; "
 				+ "-fx-background-size: 1200 800;");
 		getChildren().addAll(play,settings,scoreboard);
+		// foch
 	}
 	
 }
