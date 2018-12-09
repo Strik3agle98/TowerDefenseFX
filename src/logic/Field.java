@@ -106,7 +106,7 @@ public class Field extends GridPane{
 		return enemyCount[index];
 	}
 	public void setEnemyCount(int[] enemyCount) {
-		this.enemyCount = enemyCount;
+		Field.enemyCount = enemyCount;
 	}
 	public Canvas getBattlefield() {
 		return battlefield;

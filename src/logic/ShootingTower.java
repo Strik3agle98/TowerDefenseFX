@@ -4,6 +4,7 @@ import javafx.concurrent.Task;
 import javafx.scene.image.Image;
 
 public class ShootingTower extends Tower implements Shootable{
+	private int countTimer;
 	private int shootingSpeed;
 	private Thread shootingThread;
 	private boolean isShooting = false;
@@ -14,47 +15,32 @@ public class ShootingTower extends Tower implements Shootable{
 	}
 	@Override
 	public void startShooting() {
+		if(Field.getEnemyCount(getRow()) == 0) return;
 		System.out.println("Started shooting");
-//		final Tower tower = this;
-//		Task<Void> task = new Task<Void>() {
-//	        @Override protected Void call() throws Exception {
-//	        	while(true) {
-//	        		if (isCancelled()) {
-//	                    return null;
-//	                }
-//	    			for(int i = 0; i < 3; i++) {
-//	    				System.out.println("Shooting");
-//	    				Bullet bullet = new Bullet();
-//	    				bullet.setX(tower.x + 30);
-//	    				bullet.setY(tower.y + 30);
-//	    				bullet.setRow(tower.getRow());
-//	    				if(tower.name.equals("Frenchfries")) {
-//	    					bullet.setImage(new Image("Bullet_1.png"));
-//	    				}
-//	    				else if(tower.name.equals("Ice-Cream")){
-//	    					bullet.setImage(new Image("Bullet_1.png"));
-//	    				}
-//	    				else if(tower.name.equals("Hamburger")) {
-//	    					bullet.setImage(new Image("Bullet_1.png"));
-//	    				}
-//	    				Field.addBullet(bullet);
-//	    				try {
-//	    					Thread.sleep(1000);
-//	    				} catch (Exception e) {
-//	    					System.out.println("ShootingThread Interrupted");
-//	    				}
-//	    			}
-//	    			try {
-//	    				Thread.sleep(2000);
-//	    			} catch(Exception e) {
-//	    				System.out.println("Reloading Interrupted");
-//	    			}
-//	    		}
-//	        }
-//	    };
-//	    shootingThread = new Thread(task);
-		shootingThread = new ShootingThread(this);
-	    shootingThread.start();
+		if(countTimer > 10000) {
+			countTimer = 0;
+			while(countTimer < 10000) countTimer++;
+			countTimer = 0;
+		}
+		if(countTimer % 1000 == 0) {
+			Bullet bullet = new Bullet();
+			bullet.setX(getX() + 30);
+			bullet.setY(getY() + 30);
+			bullet.setRow(getRow());
+			if(name.equals("Frenchfries")) {
+				bullet.setImage(new Image("Bullet_1.png"));
+			}
+			else if(name.equals("Ice-Cream")){
+				bullet.setImage(new Image("Bullet_2.png"));
+			}
+			else if(name.equals("Hamburger")) {
+				bullet.setImage(new Image("Bullet_3.png"));
+			}
+			Field.addBullet(bullet);
+		}
+		countTimer++;
+//		shootingThread = new ShootingThread(this);
+//	    shootingThread.start();
 	}
 	@Override
 	public void stopShooting() {
@@ -78,6 +64,14 @@ public class ShootingTower extends Tower implements Shootable{
 	}
 	public void setIsShooting(boolean b) {
 		this.isShooting = b;
+	}
+
+	public int getCountTimer() {
+		return countTimer;
+	}
+
+	public void setCountTimer(int countTimer) {
+		this.countTimer = countTimer;
 	}
 	public void update() {
 		if(Field.getEnemyCount(super.getRow()) != 0 && !isShooting) {

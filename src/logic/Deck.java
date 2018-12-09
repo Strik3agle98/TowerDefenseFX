@@ -41,8 +41,14 @@ public class Deck extends GridPane{
 		gc.clearRect(0, 0, this.score.getWidth(), this.score.getHeight());
 		gc.fillText("" + GUI.getScore(), this.score.getWidth() / 2, this.score.getWidth() / 2);
 	}
+	public static Card getCard(int i) {
+		return cards.get(i);
+	}
 	public static void update() {
 		for(Card card : cards) {
+			System.out.println("Updating card");
+			//card.updateProgress(0.001);
+			System.out.println("Updated card");
 			
 		}
 	}

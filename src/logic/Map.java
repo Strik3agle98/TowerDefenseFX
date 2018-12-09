@@ -69,14 +69,18 @@ public class Map extends GridPane{
 							System.out.println("GOT " + db.getString() + " at row : " + getRowIndex(c) + ", at column : " + getColumnIndex(c));
 							
 							int row = getRowIndex(c), col = getColumnIndex(c);
-							switch(Integer.parseInt(db.getString().substring(6, 7))) {
-								case 1: Field.addTower((Tower)(new Frenchfries(row,col)), row, col); break;
-								case 2: Field.addTower((Tower)(new IceCream(row,col)), row, col); break;
-								case 3: Field.addTower((Tower)(new Hamburger(row,col)), row, col); break;
-								default: System.out.println("Error");
+							if(Field.getTable(col,row) == null) {
+								int tower_index = Integer.parseInt(db.getString().substring(6, 7));
+								Deck.getCard(tower_index).setReloading(true);
+								switch(tower_index) {
+									case 1: Field.addTower((Tower)(new Frenchfries(row,col)), row, col); break;
+									case 2: Field.addTower((Tower)(new IceCream(row,col)), row, col); break;
+									case 3: Field.addTower((Tower)(new Hamburger(row,col)), row, col); break;
+									default: System.out.println("Error");
+								}
+								
+								success = true;
 							}
-							
-							success = true;
 							//c.getGraphicsContext2D().setFill(Color.BLACK);
 							//c.getGraphicsContext2D().fillRect(0, 0, c.getWidth(),c.getHeight());
 						}

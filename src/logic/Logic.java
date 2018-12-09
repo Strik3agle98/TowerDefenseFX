@@ -23,7 +23,7 @@ public class Logic {
 				System.out.println("time : " + now);
 				
 				Field.update();
-				Deck.update();
+				//Deck.update();
 			}
 		};
 		animation.start();

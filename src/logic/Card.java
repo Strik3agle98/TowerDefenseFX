@@ -7,14 +7,18 @@ import javafx.scene.image.Image;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
+import javafx.scene.paint.Color;
 
 public class Card extends Canvas{
+	private double progress = 0.0;
+	private boolean isReloading = false;
+	
 	public Card(int i) {
 		setWidth(100);
 		setHeight(130);
 		setCursor(Cursor.HAND);
 		System.out.println("Card_" + i + ".png");
-		getGraphicsContext2D().drawImage(new Image("Card_" + i + ".png"), 0, 0, 100, 130);
+		getGraphicsContext2D().drawImage(new Image("Card_" + i + ".png"), 0, 0, getWidth(), getHeight());
 		
 		setOnDragDetected((t)->{
 			System.out.println("Drag Detected");
@@ -25,5 +29,24 @@ public class Card extends Canvas{
 			db.setContent(content);
 			t.consume();
 		});
+	}
+	public double getProgress() {
+		return progress;
+	}
+	public void setProgress(double progress) {
+		this.progress = progress;
+	}
+
+	public boolean isReloading() {
+		return isReloading;
+	}
+
+	public void setReloading(boolean isReloading) {
+		this.isReloading = isReloading;
+	}
+	public void updateProgress(double d) {
+		for(int i = 0; i <= 100; i++) {
+			
+		}
 	}
 }
