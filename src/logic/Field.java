@@ -32,7 +32,6 @@ public class Field extends GridPane{
 	public Field() {
 		battlefield = new Canvas(1200,650);
 		System.out.println(battlefield.hashCode());
-		//battlefield.getGraphicsContext2D().setFill(Color.BROWN);
 		battlefield.getGraphicsContext2D().drawImage(new Image("Field.jpg"), 0, 0);
 		//battlefield.setStyle("-fx-background-image: Field.jpg");
 		setPadding(new Insets(10,10,10,10));
@@ -92,11 +91,11 @@ public class Field extends GridPane{
 	public void setTable(Tower[][] table) {
 		Field.table = table;
 	}
-	public static Tower getTable(int x,int y) {
-		return table[x][y];
+	public static Tower getTable(int row,int col) {
+		return table[row][col];
 	}
-	public static void setTable(Tower tower,int x,int y) {
-		table[x][y] = tower;
+	public static void setTable(Tower tower,int row,int col) {
+		table[row][col] = tower;
 	}
 	public int[] getEnemyCount() {
 		return enemyCount;

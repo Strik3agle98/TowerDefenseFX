@@ -4,10 +4,10 @@ public interface Shootable {
 	
 	public void startShooting();
 	
-	public void stopShooting();
+	//public void stopShooting();
 	
-	public int getShootingSpeed();
+	//public int getShootingSpeed();
 	
-	public void setShootingSpeed(int shootingSpeed);
+	//public void setShootingSpeed(int shootingSpeed);
 	
 }

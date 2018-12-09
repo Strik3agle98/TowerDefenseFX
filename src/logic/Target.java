@@ -7,9 +7,11 @@ import javafx.scene.image.Image;
 public class Target {
 	private String name = "Target";
 	private int health = 100;
+	private int countTimer = 0;
 	private Image attackingImage,standbyImage;
 	private int row;
-	private int damage;
+	private int attackSpeed = 10;
+	private int damage = 20;
 	private boolean isInAttackingState = false;
 	private double x = 0, y = 0;
 	private double dx = 1;
@@ -25,14 +27,26 @@ public class Target {
 		this.health = health;
 	}
 	public void startAttacking(Tower tower) {
-		if(!isInAttackingState) {
-			
-			isInAttackingState = true;
-			attack(tower);
+		System.out.println("Target started attacking | Count = " + countTimer);
+		isInAttackingState = true;
+		if(countTimer > 200) {
+			countTimer = 0;
 		}
+		if(countTimer % attackSpeed == 0) {
+			System.out.println("Attacked tower");
+			attack(tower);
+			System.out.println("Tower remain HP : " + tower.getHealth());
+			if(tower.getHealth() <= 0) {
+				startWalk();
+				stopAttacking();
+				return;
+			}
+		}
+		countTimer++;
 	}
 	public void stopAttacking() {
 		isInAttackingState = false;
+		countTimer = 0;
 	}
 	public void attack(Tower tower) {
 		tower.takeDamage(damage);
@@ -117,11 +131,35 @@ public class Target {
 	public void setRow(int row) {
 		this.row = row;
 	}
+	/**
+	 * @return the countTimer
+	 */
+	public int getCountTimer() {
+		return countTimer;
+	}
+	/**
+	 * @param countTimer the countTimer to set
+	 */
+	public void setCountTimer(int countTimer) {
+		this.countTimer = countTimer;
+	}
 	public boolean isInAttackingState() {
 		return isInAttackingState;
 	}
 	public void setInAttackingState(boolean isInAttackingState) {
 		this.isInAttackingState = isInAttackingState;
+	}
+	/**
+	 * @return the attackSpeed
+	 */
+	public int getAttackSpeed() {
+		return attackSpeed;
+	}
+	/**
+	 * @param attackSpeed the attackSpeed to set
+	 */
+	public void setAttackSpeed(int attackSpeed) {
+		this.attackSpeed = attackSpeed;
 	}
 	public void update() {
 		setX(getX() - dx);

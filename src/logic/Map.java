@@ -69,7 +69,7 @@ public class Map extends GridPane{
 							System.out.println("GOT " + db.getString() + " at row : " + getRowIndex(c) + ", at column : " + getColumnIndex(c));
 							
 							int row = getRowIndex(c), col = getColumnIndex(c);
-							if(Field.getTable(col,row) == null) {
+							if(Field.getTable(row,col) == null) {
 								int tower_index = Integer.parseInt(db.getString().substring(6, 7));
 								Deck.getCard(tower_index).setReloading(true);
 								switch(tower_index) {
@@ -107,11 +107,6 @@ public class Map extends GridPane{
 					}
 				});
 				setStyle("-fx-grid-lines-visible: true");
-				GraphicsContext gc = c.getGraphicsContext2D();
-				//gc.setFill(Color.AQUA);
-				//gc.fillRect(0, 0, c.getWidth(), c.getHeight());
-				//gc.setStroke(Color.BLACK);
-				//gc.strokeRect(0, 0, c.getWidth(), c.getHeight());
 				add(c,x,i);
 			}
 		}
