@@ -42,7 +42,7 @@ public class Deck extends GridPane{
 		gc.fillText("" + GUI.getScore(), this.score.getWidth() / 2, this.score.getWidth() / 2);
 	}
 	public static Card getCard(int i) {
-		return cards.get(i);
+		return cards.get(i - 1);
 	}
 	public static void update() {
 		for(Card card : cards) {
