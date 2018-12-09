@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import logic.Logic;
+import logic.User;
 import javafx.scene.layout.HBox;
 public class NameEntering extends VBox{
 	private TextField name;
