@@ -17,7 +17,7 @@ public class Target {
 	private double dx = 1;
 	
 	public Target() {
-		
+		System.out.println("!");
 	}
 	public Target(String name) {
 		this.setName(name);
