@@ -1,8 +1,8 @@
 ---Player List---
 as, 3000
-Can, 2000
-Nut, 700
-Dai, 500
+Can, 5000
+Nut, 7000
+Dai, 5000
 Cat, 500
 Can, 200
 Can, 200
