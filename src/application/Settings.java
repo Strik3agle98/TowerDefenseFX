@@ -14,7 +14,7 @@ import javafx.scene.layout.HBox;
 
 
 public class Settings extends VBox {
-	Button back;
+	Button back, proceed;
 	Text t1,t2,volume;
 	CheckBox mute;
 	Slider volume_slider;
@@ -31,6 +31,7 @@ public class Settings extends VBox {
 		mute_menu.setPadding(new Insets(20,20,20,20));
 		mute_menu.setSpacing(20);
 		back = new Button("");
+		proceed = new Button("");
 		volume_menu = new HBox();
 		volume_menu.setPrefWidth(300);
 		volume_menu.setPadding(new Insets(20,20,20,20));
@@ -40,12 +41,34 @@ public class Settings extends VBox {
 		setAlignment(Pos.CENTER);
 		setSpacing(20);
 		volume_menu.getChildren().addAll(t2,volume_slider);
-		getChildren().addAll(volume_menu,mute_menu,back);
+		getChildren().addAll(volume_menu,mute_menu,back, proceed);
 		back.setPrefSize(200, 50);
 		back.setStyle("-fx-background-image: url('BACK.png')");
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed back.");
+				if(GUI.getStage().getScene() == GUI.getSceneOfGameScreen()) {
+					GUI.getStage().setScene(GUI.getSceneOfGameScreen());
+				}
+				else {
+					GUI.getStage().setScene(GUI.getSceneOfMainMenu());
+				}
+			}
+		});
+		back.setCursor(Cursor.HAND);
+		
+		proceed.setPrefSize(200, 50);
+		proceed.setStyle("-fx-background-image: url('PROCEED.png')");
+		proceed.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				System.out.println("You pressed proceed.");
+				System.out.println(volume_slider.getValue()/100);
+				if(mute.isSelected()) {
+					GUI.playBGM(0);
+				}
+				else {
+					GUI.playBGM(volume_slider.getValue()/100);
+				}
 				if(GUI.getStage().getScene() == GUI.getSceneOfGameScreen()) {
 					GUI.getStage().setScene(GUI.getSceneOfGameScreen());
 				}

@@ -25,6 +25,7 @@ public class GUI extends Application {
 	private static Scene sc_NameEntering;
 	private static Scene sc_GameScreen;
 	private static Scene sc_GameOver;
+	private static AudioClip BGM;
 	private static int Score = 0;
 	public static Stage getStage() {
 		return guiStage;
@@ -59,8 +60,8 @@ public class GUI extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			AudioClip BGM = new AudioClip(ClassLoader.getSystemResource("Sneaky-OMB.wav").toString());
-			BGM.play();
+			BGM = new AudioClip(ClassLoader.getSystemResource("Sneaky-OMB.wav").toString());
+			playBGM(1);
 			guiStage = primaryStage;
 			data = new Data(new ArrayList<User>());
 			MainMenu mainMenu = new MainMenu();
@@ -91,6 +92,12 @@ public class GUI extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void playBGM(double volume) {
+		BGM.stop();
+		BGM.setVolume(volume);
+		BGM.play();
 	}
 	
 	public static void main(String[] args) {
