@@ -110,6 +110,7 @@ public class Target {
 	public void setX(double x) {
 		if(x <= 1.0) {
 			GUI.getStage().setScene(GUI.getSceneOfGameOver());
+			GUI.getData().updateFile();
 		}
 		else this.x = x;
 	}
