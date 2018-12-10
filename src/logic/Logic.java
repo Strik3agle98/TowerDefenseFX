@@ -29,6 +29,12 @@ public class Logic {
 				System.out.println("time : " + now + " ,countTimer : " + countTimer);
 				
 				Field.update();
+				Deck.update();
+				
+				spawn();
+				countTimer++;
+			}
+			public void spawn() {
 				if(countTimer % 200 == 0) {
 					System.out.println("Spawning a target");
 					int val = random.nextInt() % 2;
@@ -45,8 +51,6 @@ public class Logic {
 						default: break;
 					}
 				}
-				//Deck.update();
-				countTimer++;
 			}
 		};
 		animation.start();
