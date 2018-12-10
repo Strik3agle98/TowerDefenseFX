@@ -11,8 +11,8 @@ import java.util.Collections;
 import logic.NullNameException;
 import logic.User;
 public class Data{
-	ArrayList<User> users;
-	public String inputFile = "assets/score.txt";
+	private ArrayList<User> users;
+	private String inputFile = "assets/score.txt";
 	private User user;
 	public Data(ArrayList<User> u) {
 		users = u;
@@ -38,12 +38,6 @@ public class Data{
 	public void sortUserByAlphabet() {
 		User.setMode(2);
 		Collections.sort(users);
-	}
-	public ArrayList<User> getUsers(){
-		return users;
-	}
-	public void setUsers(ArrayList<User> users) {
-		this.users = users;
 	}
 	
 	public void readInput() {
@@ -110,6 +104,13 @@ public class Data{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	//getter and setter
+	public ArrayList<User> getUsers(){
+		return users;
+	}
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
 	}
 	
 }
