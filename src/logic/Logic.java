@@ -8,7 +8,7 @@ import javafx.animation.AnimationTimer;
 
 public class Logic {
 	private GameScreen gameScreen;
-	
+	public static int SCORE,MONEY;
 	public Logic() {
 		gameScreen = new GameScreen();
 		startGameLoop();

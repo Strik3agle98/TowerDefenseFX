@@ -10,16 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="application.DataManager" project="TowerDefenseFX" 
-    file="/TowerDefenseFX/src/application/DataManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="547" y="249"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="application.GameOver" project="TowerDefenseFX" 
+  <class id="2" language="java" name="application.GameOver" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/GameOver.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="584" y="1321"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -28,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="application.GUI" project="TowerDefenseFX" 
+  <class id="3" language="java" name="application.GUI" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/GUI.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="278" y="938"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="application.MainMenu" project="TowerDefenseFX" 
+  <class id="4" language="java" name="application.MainMenu" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/MainMenu.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="234" y="1340"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="application.NameEntering" project="TowerDefenseFX" 
+  <class id="5" language="java" name="application.NameEntering" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/NameEntering.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="408" y="1371"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -55,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="application.PauseMenu" project="TowerDefenseFX" 
+  <class id="6" language="java" name="application.PauseMenu" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/PauseMenu.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="785" y="1359"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,7 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="application.SceneManager" project="TowerDefenseFX" 
+  <class id="7" language="java" name="application.SceneManager" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/SceneManager.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="217" y="569"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="application.Scoreboard" project="TowerDefenseFX" 
+  <class id="8" language="java" name="application.Scoreboard" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/Scoreboard.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1234" y="1392"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="application.Settings" project="TowerDefenseFX" 
+  <class id="9" language="java" name="application.Settings" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/application/Settings.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="980" y="1402"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -91,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="logic.Broccoli" project="TowerDefenseFX" 
+  <class id="10" language="java" name="logic.Broccoli" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Broccoli.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2793" y="1748"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="logic.Bullet" project="TowerDefenseFX" 
+  <class id="11" language="java" name="logic.Bullet" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Bullet.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1917" y="354"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="logic.Card" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Card.java" 
+  <class id="12" language="java" name="logic.Card" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Card.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2382" y="300"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -118,7 +109,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="logic.Deck" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Deck.java" 
+  <class id="13" language="java" name="logic.Deck" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Deck.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2330" y="642"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -127,16 +118,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="15" language="java" name="logic.Eatable" project="TowerDefenseFX" 
-    file="/TowerDefenseFX/src/logic/Eatable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2106" y="932"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="16" language="java" name="logic.Field" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Field.java" 
+  <class id="14" language="java" name="logic.Field" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Field.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="595" y="744"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -145,7 +127,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="logic.Frenchfries" project="TowerDefenseFX" 
+  <class id="15" language="java" name="logic.Frenchfries" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Frenchfries.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2257" y="1763"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -154,7 +136,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="logic.GameScreen" project="TowerDefenseFX" 
+  <class id="16" language="java" name="logic.GameScreen" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/GameScreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1410" y="270"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -163,7 +145,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="logic.GameUIController" project="TowerDefenseFX" 
+  <class id="17" language="java" name="logic.GameUIController" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/GameUIController.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1090" y="399"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -172,7 +154,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="logic.Hamburger" project="TowerDefenseFX" 
+  <class id="18" language="java" name="logic.Hamburger" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Hamburger.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1972" y="1766"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -181,7 +163,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="logic.IceCream" project="TowerDefenseFX" 
+  <class id="19" language="java" name="logic.IceCream" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/IceCream.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1688" y="1780"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -190,16 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="logic.IceCreamBullet" project="TowerDefenseFX" 
-    file="/TowerDefenseFX/src/logic/IceCreamBullet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1921" y="762"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="logic.Logic" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Logic.java" 
+  <class id="20" language="java" name="logic.Logic" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Logic.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1106" y="208"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="logic.Map" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Map.java" 
+  <class id="21" language="java" name="logic.Map" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Map.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1295" y="518"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -217,7 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="logic.Onion" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Onion.java" 
+  <class id="22" language="java" name="logic.Onion" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Onion.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2609" y="1753"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="26" language="java" name="logic.Shootable" project="TowerDefenseFX" 
+  <interface id="23" language="java" name="logic.Shootable" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Shootable.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1969" y="1129"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -235,16 +208,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="27" language="java" name="logic.ShootingThread" project="TowerDefenseFX" 
-    file="/TowerDefenseFX/src/logic/ShootingThread.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2349" y="879"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="28" language="java" name="logic.ShootingTower" project="TowerDefenseFX" 
+  <class id="24" language="java" name="logic.ShootingTower" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/ShootingTower.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1972" y="1472"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -253,7 +217,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="logic.Target" project="TowerDefenseFX" 
+  <class id="25" language="java" name="logic.Target" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Target.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2677" y="1025"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -262,16 +226,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="30" language="java" name="logic.Throwable" project="TowerDefenseFX" 
-    file="/TowerDefenseFX/src/logic/Throwable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1879" y="938"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="31" language="java" name="logic.Tower" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Tower.java" 
+  <class id="26" language="java" name="logic.Tower" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Tower.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1620" y="1010"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -280,7 +235,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="logic.User" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/User.java" 
+  <class id="27" language="java" name="logic.User" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/User.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="926" y="884"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -289,7 +244,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="33" language="java" name="logic.UserManagement" project="TowerDefenseFX" 
+  <class id="28" language="java" name="logic.UserManagement" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/UserManagement.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1177" y="756"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -298,37 +253,33 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <realization id="31">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
   <generalization id="34">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="29"/>  
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="25"/>  
   </generalization>  
   <generalization id="35">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="29"/>  
-  </generalization>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <realization id="38">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="26"/>  
-  </realization>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="31"/>  
-  </generalization>  
-  <generalization id="40">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="28"/>  
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="24"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
