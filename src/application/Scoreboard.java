@@ -18,6 +18,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import logic.User;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import logic.UserManagement;
+>>>>>>> Stashed changes
 =======
 import logic.UserManagement;
 >>>>>>> Stashed changes
@@ -28,6 +32,10 @@ public class Scoreboard extends VBox{
 	private ListView<Label> logListView;
 	private int count = 1;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+	private UserManagement userManagement = new UserManagement();
+>>>>>>> Stashed changes
 =======
 	private UserManagement userManagement = new UserManagement();
 >>>>>>> Stashed changes
@@ -63,7 +71,11 @@ public class Scoreboard extends VBox{
 		getChildren().addAll(logListView, back);
 		
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		top5 = GUI.getData().getTop5();
+=======
+		top5 = userManagement.getTop5();
+>>>>>>> Stashed changes
 =======
 		top5 = userManagement.getTop5();
 >>>>>>> Stashed changes
