@@ -59,6 +59,7 @@ public class GUI extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			guiStage = primaryStage;
+			data = new Data(new ArrayList<User>());
 			MainMenu mainMenu = new MainMenu();
 			Settings settings = new Settings();
 			Scoreboard scoreboard = new Scoreboard();
@@ -71,7 +72,6 @@ public class GUI extends Application {
 			sc_GameOver = new Scene(gameOver,W,H);
 			//SceneManager sceneManager = new SceneManager();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			data = new Data(new ArrayList<User>());
 			primaryStage.setScene(sc_MainMenu);
 			primaryStage.show();
 			primaryStage.setTitle("TowerDefense");

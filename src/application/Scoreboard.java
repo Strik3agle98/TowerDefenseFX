@@ -56,7 +56,7 @@ public class Scoreboard extends VBox{
 				+ "-fx-background-size: 1200 800;");
 		getChildren().addAll(logListView, back);
 		
-		top5 = userManagement.getTop5();
+		top5 = GUI.getData().getTop5();
 		for(User u: top5) {
 			addData(u.getName(), u.getMaxScore());
 		}
