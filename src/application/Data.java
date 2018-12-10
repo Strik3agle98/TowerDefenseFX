@@ -8,11 +8,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import logic.NullNameException;
 import logic.User;
 public class Data{
 	ArrayList<User> users;
 	public String inputFile = "assets/score.txt";
-	
+	private User user;
 	public Data(ArrayList<User> u) {
 		users = u;
 		readInput();
@@ -63,7 +64,12 @@ public class Data{
 						
 						String name = info[0].trim();
 						int score = Integer.parseInt(info[1].trim());
-						User user = new User(name, score);
+						try {
+							user = new User(name, score);
+						} catch (NullNameException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						users.add(user);
 					}
 				}

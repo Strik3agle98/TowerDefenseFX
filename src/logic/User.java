@@ -7,15 +7,25 @@ public class User implements Comparable<User>{
 	private static int mode = 1;
 	private int userId;
 	private int maxScore = 0;
-	public User(String name) {
-		this.name = name;
-		this.userId = id++;
+	public User(String name) throws NullNameException {
+		if(name.equals("")) {
+			throw new NullNameException();
+		}
+		else {
+			this.name = name;
+			this.userId = id++;
+		}
 	}
 	
-	public User(String name, int score) {
-		this.name = name;
-		this.maxScore = score;
-		this.userId = id++;
+	public User(String name, int score) throws NullNameException{
+		if(name.equals("")) {
+			throw new NullNameException();
+		}
+		else {
+			this.name = name;
+			this.maxScore = score;
+			this.userId = id++;
+		}
 	}
 	
 	public int compareToByScore(User u) {

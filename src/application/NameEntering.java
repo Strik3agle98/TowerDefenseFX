@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import logic.Logic;
+import logic.NullNameException;
 import logic.User;
 import javafx.scene.layout.HBox;
 public class NameEntering extends VBox{
@@ -22,6 +23,7 @@ public class NameEntering extends VBox{
 	private Button enter,back;
 	private HBox group1,group2;
 	private Text t1;
+	private User new_user;
 	public NameEntering() {
 		group1 = new HBox();
 		t1 = new Text("Please enter your username:");
@@ -50,7 +52,12 @@ public class NameEntering extends VBox{
 		enter.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed enter.");
-				User new_user = new User(name.getText());
+				String Name = name.getText();
+				try {
+					new_user = new User(Name);
+				} catch (NullNameException e) {
+					e.printStackTrace();
+				}
 				GUI.getData().addUser(new_user);
 				//save name and load game....
 				new Logic();
