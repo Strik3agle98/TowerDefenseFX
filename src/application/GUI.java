@@ -27,6 +27,7 @@ public class GUI extends Application {
 	private static Scene sc_GameOver;
 	private static AudioClip BGM;
 	private static int Score = 0;
+	private static double volume = 1.0;
 	public static Stage getStage() {
 		return guiStage;
 	}
@@ -57,11 +58,17 @@ public class GUI extends Application {
 	public static int getScore() {
 		return Score;
 	}
+	public static double getVolume() {
+		return volume;
+	}
+	public static void setVolume(double volume) {
+		GUI.volume = volume;
+	}
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			BGM = new AudioClip(ClassLoader.getSystemResource("Sneaky-OMB.wav").toString());
-			playBGM(1);
+			playBGM(volume);
 			guiStage = primaryStage;
 			data = new Data(new ArrayList<User>());
 			MainMenu mainMenu = new MainMenu();

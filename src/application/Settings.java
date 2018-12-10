@@ -64,10 +64,12 @@ public class Settings extends VBox {
 				System.out.println("You pressed proceed.");
 				System.out.println(volume_slider.getValue()/100);
 				if(mute.isSelected()) {
-					GUI.playBGM(0);
+					GUI.setVolume(0);
+					GUI.playBGM(GUI.getVolume());
 				}
 				else {
-					GUI.playBGM(volume_slider.getValue()/100);
+					GUI.setVolume(volume_slider.getValue()/100);
+					GUI.playBGM(GUI.getVolume());
 				}
 				if(GUI.getStage().getScene() == GUI.getSceneOfGameScreen()) {
 					GUI.getStage().setScene(GUI.getSceneOfGameScreen());

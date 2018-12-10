@@ -1,5 +1,6 @@
 package logic;
 
+import application.GUI;
 import javafx.concurrent.Task;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
@@ -26,7 +27,7 @@ public class ShootingTower extends Tower implements Shootable{
 		}
 		if(countTimer % 100 == 0) {
 			Bullet bullet = new Bullet();
-			Fire.play();
+			Fire.play(GUI.getVolume());
 			bullet.setX(getX() + 30);
 			bullet.setY(getY() + 30);
 			bullet.setRow(getRow());
