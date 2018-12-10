@@ -17,28 +17,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import logic.User;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 import logic.UserManagement;
->>>>>>> Stashed changes
-=======
-import logic.UserManagement;
->>>>>>> Stashed changes
+
 //sorted solely by score atm
 public class Scoreboard extends VBox{
 	private Button back;
 	private ObservableList<Label> logDataList = FXCollections.observableArrayList();
 	private ListView<Label> logListView;
 	private int count = 1;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-	private UserManagement userManagement = new UserManagement();
->>>>>>> Stashed changes
-=======
-	private UserManagement userManagement = new UserManagement();
->>>>>>> Stashed changes
 	private ArrayList<User> top5 = new ArrayList<User>();
 	
 	public Scoreboard() {
@@ -70,15 +56,7 @@ public class Scoreboard extends VBox{
 				+ "-fx-background-size: 1200 800;");
 		getChildren().addAll(logListView, back);
 		
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		top5 = GUI.getData().getTop5();
-=======
-		top5 = userManagement.getTop5();
->>>>>>> Stashed changes
-=======
-		top5 = userManagement.getTop5();
->>>>>>> Stashed changes
 		for(User u: top5) {
 			addData(u.getName(), u.getMaxScore());
 		}
