@@ -8,8 +8,6 @@ import javafx.scene.media.AudioClip;
 public class ShootingTower extends Tower implements Shootable{
 	private int countTimer = 0;
 	private AudioClip Fire;
-//	private int shootingSpeed;
-//	private Thread shootingThread;
 	private boolean isShooting = false;
 	public ShootingTower(String name,int row,int col){
 		super(name, 100,20);
@@ -43,26 +41,7 @@ public class ShootingTower extends Tower implements Shootable{
 			Field.addBullet(bullet);
 		}
 		countTimer++;
-//		shootingThread = new ShootingThread(this);
-//	    shootingThread.start();
 	}
-//	@Override
-//	public void stopShooting() {
-//		shootingThread.stop();
-//	}
-//	public int getShootingSpeed() {
-//		return this.shootingSpeed;
-//	}
-//	@Override
-//	public void setShootingSpeed(int shootingSpeed) {
-//		this.shootingSpeed = shootingSpeed;
-//	}
-//	public Thread getShootingThread() {
-//		return shootingThread;
-//	}
-//	public void setShootingThread(Thread shootingThread) {
-//		this.shootingThread = shootingThread;
-//	}
 	public boolean isShooting() {
 		return this.isShooting;
 	}

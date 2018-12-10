@@ -106,7 +106,7 @@ public class Map extends GridPane{
 						event.consume();
 					}
 				});
-				setStyle("-fx-grid-lines-visible: true");
+				//setStyle("-fx-grid-lines-visible: true");
 				add(c,x,i);
 			}
 		}
