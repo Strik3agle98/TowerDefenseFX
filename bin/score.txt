@@ -1,31 +1,8 @@
 ---Player List---
+as, 3000
 Can, 2000
 Nut, 700
 Dai, 500
 Cat, 500
 Can, 200
-<<<<<<< HEAD
 Can, 200
-Nameless, 0
-||||||| Merge branch 'master' of https://github.com/Strik3agle98/TowerDefenseFX
-Can, 200
-=======
-Can, 200
-Nameless, 0
-Nameless, 0
-Nameless, 0
-Nameless, 0
-<<<<<<< HEAD
->>>>>>> master
-||||||| merged common ancestors
->>>>>>>>> Temporary merge branch 2
-=======
-Nameless, 0
-Nameless, 0
-Nameless, 0
-Nameless, 0
-Nameless, 0
-Nameless, 0
-Nameless, 0
-Nameless, 0
->>>>>>> master

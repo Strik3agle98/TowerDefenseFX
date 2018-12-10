@@ -26,9 +26,9 @@ public class GameOver extends StackPane{
 		setPrefSize(GUI.W,GUI.H);
 		Canvas c = new Canvas(GUI.W,GUI.H);
 		setStyle("-fx-background-image: url('GameOver.jpg')");
-		c.getGraphicsContext2D().setFill(Color.AQUA);
-		c.getGraphicsContext2D().setFont(new Font(40));
-		c.getGraphicsContext2D().fillText("Your Score was : " + Logic.SCORE, GUI.W / 2 - 150, GUI.H / 2 + 200);
+//		c.getGraphicsContext2D().setFill(Color.AQUA);
+//		c.getGraphicsContext2D().setFont(new Font(40));
+//		c.getGraphicsContext2D().fillText("Your Score was : " + Logic.SCORE, GUI.W / 2 - 150, GUI.H / 2 + 200);
 		proceed = new Button("");
 		proceed.setPrefSize(200, 50);
 		proceed.setStyle("-fx-background-image: url('PROCEED.png')");
@@ -36,11 +36,10 @@ public class GameOver extends StackPane{
 			public void handle(ActionEvent arg0) {
 				System.out.println("You pressed proceed.");
 				GAMEOVER = false;
-				
 				GUI.getStage().setScene(GUI.getSceneOfMainMenu());
 			}
 		});
 		proceed.setCursor(Cursor.HAND);
-		getChildren().addAll(proceed,c);
+		getChildren().addAll(c,proceed);
 	}
 }

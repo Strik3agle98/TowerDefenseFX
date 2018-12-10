@@ -8,10 +8,12 @@ import javafx.animation.AnimationTimer;
 
 public class Logic {
 	private GameScreen gameScreen;
+	public static String name;
 	public static int SCORE = 0,MONEY = 200;
-	public Logic() {
+	public Logic(String name) {
 		gameScreen = new GameScreen();
 		startGameLoop();
+		this.name = name;
 	}
 	public void startGameLoop() {
 		AnimationTimer animation = new AnimationTimer() {
@@ -50,4 +52,5 @@ public class Logic {
 		};
 		animation.start();
 	}
+	
 }

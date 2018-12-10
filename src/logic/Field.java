@@ -174,7 +174,7 @@ public class Field extends GridPane{
 		for(Bullet bullet : bullets) {
 			for(Target target : targets) {
 				if(bullet.isCollidingWith(target)) {
-					target.takeDamage(20);
+					target.takeDamage(bullet.getDamage());
 					t.add(bullet);
 				}
 			}

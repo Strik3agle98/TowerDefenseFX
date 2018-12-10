@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import logic.Logic;
 import logic.NullNameException;
 import logic.User;
 public class Data{
@@ -93,6 +94,12 @@ public class Data{
 	}
 	
 	public void updateFile() {
+		try {
+			users.add(new User(Logic.name, Logic.SCORE));
+		} catch (NullNameException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try {
 			FileWriter writer = new FileWriter(new File("assets/score.txt"));
 			writer.write("---Player List---\n");

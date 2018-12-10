@@ -6,6 +6,7 @@ public class Bullet {
 	private double x,y;
 	private double dx = 5;
 	private int row;
+	private int damage = 20;
 	private Image image;
 	public Bullet() {
 		x = y = row = 0;
@@ -59,5 +60,11 @@ public class Bullet {
 	}
 	public void update() {
 		setX(getX() + dx);
+	}
+	public int getDamage() {
+		return damage;
+	}
+	public void setDamage(int damage) {
+		this.damage = damage;
 	}
 }

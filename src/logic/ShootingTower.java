@@ -31,12 +31,15 @@ public class ShootingTower extends Tower implements Shootable{
 			bullet.setRow(getRow());
 			if(name.equals("Frenchfries")) {
 				bullet.setImage(new Image("Bullet_1.png"));
+				bullet.setDamage(20);
 			}
 			else if(name.equals("Ice-Cream")){
 				bullet.setImage(new Image("Bullet_2.png"));
+				bullet.setDamage(40);
 			}
 			else if(name.equals("Hamburger")) {
 				bullet.setImage(new Image("Bullet_3.png"));
+				bullet.setDamage(60);
 			}
 			Field.addBullet(bullet);
 		}

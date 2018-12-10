@@ -25,7 +25,6 @@ public class NameEntering extends VBox{
 	private Button enter,back;
 	private HBox group1,group2;
 	private Text t1;
-	private User new_user;
 	public NameEntering() {
 		group1 = new HBox();
 		t1 = new Text("Please enter your username:");
@@ -55,24 +54,16 @@ public class NameEntering extends VBox{
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed enter.");
 				String Name = name.getText();
-				try {
 					if(Name.equals("")) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						//alert.setTitle("AlertType.ERROR");
 						alert.setHeaderText(null);
 						alert.setContentText("Your Name Will Be Set As Nameless");
 						alert.showAndWait();
-						new_user = new User("Nameless");
-					}
-					else {
-						new_user = new User(Name);
-					}
-				} catch (NullNameException e) {
-					e.printStackTrace();
+						Name = "Nameless";		
 				}
-				GUI.getData().addUser(new_user);
 				//save name and load game....
-				new Logic();
+				new Logic(Name);
 				GUI.getStage().setScene(GUI.getSceneOfGameScreen());
 			}
 		});
