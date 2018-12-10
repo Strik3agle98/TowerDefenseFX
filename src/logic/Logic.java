@@ -3,6 +3,7 @@ package logic;
 import java.util.ArrayList;
 import java.util.Random;
 
+import application.GameOver;
 import javafx.animation.AnimationTimer;
 
 public class Logic {
@@ -22,7 +23,9 @@ public class Logic {
 				
 				Field.update();
 				Deck.update();
-				
+				if(GameOver.GAMEOVER) {
+					stop();
+				}
 				spawn();
 				countTimer++;
 			}

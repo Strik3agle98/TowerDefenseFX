@@ -16,9 +16,8 @@ import logic.User;
 
 public class GameOver extends VBox{
 	private Button proceed;
-	
+	public static boolean GAMEOVER = false;
 	public GameOver() {
-		
 		setAlignment(Pos.CENTER);
 		setPrefSize(GUI.W,GUI.H);
 		//Canvas c = new Canvas(GUI.W,GUI.H);
@@ -30,6 +29,8 @@ public class GameOver extends VBox{
 		proceed.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
 				System.out.println("You pressed proceed.");
+				GAMEOVER = false;
+			
 				GUI.getStage().setScene(GUI.getSceneOfMainMenu());
 			}
 		});

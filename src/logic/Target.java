@@ -1,6 +1,7 @@
 package logic;
 
 import application.GUI;
+import application.GameOver;
 import javafx.scene.image.Image;
 
 //parent class for all target
@@ -109,6 +110,7 @@ public class Target {
 	}
 	public void setX(double x) {
 		if(x <= 1.0) {
+			GameOver.GAMEOVER = true;
 			GUI.getStage().setScene(GUI.getSceneOfGameOver());
 			GUI.getData().updateFile();
 		}
