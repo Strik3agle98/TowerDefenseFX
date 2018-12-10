@@ -17,14 +17,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import logic.User;
-import logic.UserManagement;
 //sorted solely by score atm
 public class Scoreboard extends VBox{
 	private Button back;
 	private ObservableList<Label> logDataList = FXCollections.observableArrayList();
 	private ListView<Label> logListView;
 	private int count = 1;
-	private UserManagement userManagement = new UserManagement();
 	private ArrayList<User> top5 = new ArrayList<User>();
 	
 	public Scoreboard() {
@@ -56,7 +54,7 @@ public class Scoreboard extends VBox{
 				+ "-fx-background-size: 1200 800;");
 		getChildren().addAll(logListView, back);
 		
-		top5 = userManagement.getTop5();
+		top5 = GUI.getData().getTop5();
 		for(User u: top5) {
 			addData(u.getName(), u.getMaxScore());
 		}
