@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="logic.Broccoli" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Broccoli.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2399" y="1403"/>    
+    <position height="-1" width="-1" x="2793" y="1748"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -219,7 +219,7 @@
   </class>  
   <class id="25" language="java" name="logic.Onion" project="TowerDefenseFX" file="/TowerDefenseFX/src/logic/Onion.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2262" y="1151"/>    
+    <position height="-1" width="-1" x="2609" y="1753"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -255,7 +255,7 @@
   </class>  
   <class id="29" language="java" name="logic.Target" project="TowerDefenseFX" 
     file="/TowerDefenseFX/src/logic/Target.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2679" y="1313"/>    
+    <position height="-1" width="-1" x="2677" y="1025"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

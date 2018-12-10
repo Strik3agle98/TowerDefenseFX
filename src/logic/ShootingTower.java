@@ -26,6 +26,7 @@ public class ShootingTower extends Tower implements Shootable{
 		}
 		if(countTimer % 100 == 0) {
 			Bullet bullet = new Bullet();
+			Fire.play();
 			bullet.setX(getX() + 30);
 			bullet.setY(getY() + 30);
 			bullet.setRow(getRow());

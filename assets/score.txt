@@ -6,3 +6,4 @@ Cat, 500
 Can, 200
 Can, 200
 FUCK, 0
+, 0
