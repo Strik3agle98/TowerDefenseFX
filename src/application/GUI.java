@@ -11,6 +11,7 @@ import logic.User;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 
 
@@ -58,6 +59,8 @@ public class GUI extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			AudioClip BGM = new AudioClip(ClassLoader.getSystemResource("Sneaky-OMB.wav").toString());
+			BGM.play();
 			guiStage = primaryStage;
 			data = new Data(new ArrayList<User>());
 			MainMenu mainMenu = new MainMenu();
