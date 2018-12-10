@@ -9,8 +9,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -54,7 +56,17 @@ public class NameEntering extends VBox{
 				System.out.println("You pressed enter.");
 				String Name = name.getText();
 				try {
-					new_user = new User(Name);
+					if(Name.equals("")) {
+						Alert alert = new Alert(AlertType.INFORMATION);
+						//alert.setTitle("AlertType.ERROR");
+						alert.setHeaderText(null);
+						alert.setContentText("Your Name Will Be Set As Nameless");
+						alert.showAndWait();
+						new_user = new User("Nameless");
+					}
+					else {
+						new_user = new User(Name);
+					}
 				} catch (NullNameException e) {
 					e.printStackTrace();
 				}
