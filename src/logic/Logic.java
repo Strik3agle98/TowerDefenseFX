@@ -10,14 +10,6 @@ public class Logic {
 	
 	public Logic() {
 		gameScreen = new GameScreen();
-		//Target t1 = ((Target) new Broccoli());
-		//Target t2 = ((Target) new Broccoli());
-		//Target t3 = ((Target) new Onion());
-		//Target t4 = ((Target) new Onion()); 
-		//gameScreen.getField().addTarget(t1);
-		//gameScreen.getField().addTarget(t2);
-		//gameScreen.getField().addTarget(t3);
-		//gameScreen.getField().addTarget(t4);
 		startGameLoop();
 	}
 	public void startGameLoop() {
