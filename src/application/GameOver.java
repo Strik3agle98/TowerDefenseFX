@@ -1,5 +1,9 @@
 package application;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -8,11 +12,23 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import logic.User;
 
 public class GameOver extends VBox{
 	private Button proceed;
 	
 	public GameOver() {
+		try {
+			FileWriter writer = new FileWriter(new File("assets/score.txt"));
+			writer.write("---Player List---\n");
+			for(User u: GUI.getData().getUsers()) {
+				writer.write(String.format("%s, %s\n", u.getName(), Integer.toString(u.getMaxScore())));
+			}
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		setAlignment(Pos.CENTER);
 		setPrefSize(GUI.W,GUI.H);
 		//Canvas c = new Canvas(GUI.W,GUI.H);
