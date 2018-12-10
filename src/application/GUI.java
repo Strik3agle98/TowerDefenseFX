@@ -10,6 +10,7 @@ import logic.Logic;
 import logic.User;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
@@ -81,7 +82,8 @@ public class GUI extends Application {
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(sc_MainMenu);
 			primaryStage.show();
-			primaryStage.setTitle("TowerDefense");
+			primaryStage.setTitle("Flint & Food 1.0");
+			primaryStage.getIcons().add(new Image("Bullet_3.png"));
 			guiStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
 				@Override
 				public void handle(WindowEvent event) {
