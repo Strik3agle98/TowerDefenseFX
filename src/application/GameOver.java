@@ -11,12 +11,14 @@ import javafx.scene.Cursor;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import logic.Logic;
 import logic.User;
 
-public class GameOver extends VBox{
+public class GameOver extends StackPane{
 	private Button proceed;
 	public static boolean GAMEOVER = false;
 	public GameOver() {
@@ -24,8 +26,9 @@ public class GameOver extends VBox{
 		setPrefSize(GUI.W,GUI.H);
 		Canvas c = new Canvas(GUI.W,GUI.H);
 		setStyle("-fx-background-image: url('GameOver.jpg')");
+		c.getGraphicsContext2D().setFill(Color.AQUA);
 		c.getGraphicsContext2D().setFont(new Font(40));
-		c.getGraphicsContext2D().fillText("Your Score was : " + Logic.SCORE, GUI.W / 2, GUI.H / 2 + 200);
+		c.getGraphicsContext2D().fillText("Your Score was : " + Logic.SCORE, GUI.W / 2 - 150, GUI.H / 2 + 200);
 		proceed = new Button("");
 		proceed.setPrefSize(200, 50);
 		proceed.setStyle("-fx-background-image: url('PROCEED.png')");
@@ -38,6 +41,6 @@ public class GameOver extends VBox{
 			}
 		});
 		proceed.setCursor(Cursor.HAND);
-		getChildren().addAll(proceed);
+		getChildren().addAll(proceed,c);
 	}
 }
