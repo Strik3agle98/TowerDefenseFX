@@ -46,10 +46,11 @@ public class Deck extends GridPane{
 	}
 	public static void update() {
 		for(Card card : cards) {
-			System.out.println("Updating card");
-			//card.updateProgress(0.001);
-			System.out.println("Updated card");
-			
+			if(card.isReloading()) {
+				System.out.println("Updating card");
+				card.updateProgress(1);
+				System.out.println("Updated card");
+			}
 		}
 	}
 }
