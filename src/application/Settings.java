@@ -41,7 +41,7 @@ public class Settings extends VBox {
 		setAlignment(Pos.CENTER);
 		setSpacing(20);
 		volume_menu.getChildren().addAll(t2,volume_slider);
-		getChildren().addAll(volume_menu,mute_menu,back, proceed);
+		getChildren().addAll(volume_menu,mute_menu,proceed,back);
 		back.setPrefSize(200, 50);
 		back.setStyle("-fx-background-image: url('BACK.png')");
 		back.setOnAction(new EventHandler<ActionEvent>() {
@@ -77,7 +77,7 @@ public class Settings extends VBox {
 				}
 			}
 		});
-		back.setCursor(Cursor.HAND);
+		proceed.setCursor(Cursor.HAND);
 		setStyle("-fx-background-image: url('BGL.jpg'); "
 				+ "-fx-background-position: center center; "
 				+ "-fx-background-repeat: stretch; "
