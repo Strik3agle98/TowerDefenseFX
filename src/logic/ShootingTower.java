@@ -2,9 +2,11 @@ package logic;
 
 import javafx.concurrent.Task;
 import javafx.scene.image.Image;
+import javafx.scene.media.AudioClip;
 
 public class ShootingTower extends Tower implements Shootable{
 	private int countTimer = 0;
+	private AudioClip Fire;
 //	private int shootingSpeed;
 //	private Thread shootingThread;
 	private boolean isShooting = false;
@@ -12,6 +14,7 @@ public class ShootingTower extends Tower implements Shootable{
 		super(name, 100,20);
 		super.setRow(row);
 		super.setCol(col);
+		Fire = new AudioClip(ClassLoader.getSystemResource("Meow.wav").toString());
 	}
 	@Override
 	public void startShooting() {
