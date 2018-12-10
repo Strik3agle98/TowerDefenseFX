@@ -31,7 +31,7 @@ public class Deck extends GridPane{
 			cards.add(c);
 			add(c,i,0);
 		}
-		setStyle("-fx-grid-lines-visible: true");
+		//setStyle("-fx-grid-lines-visible: true");
 		setPadding(new Insets(10,10,10,10));
 		
 	}
@@ -52,5 +52,6 @@ public class Deck extends GridPane{
 				System.out.println("Updated card");
 			}
 		}
+		
 	}
 }
