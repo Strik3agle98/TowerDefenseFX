@@ -15,4 +15,17 @@ Nameless, 0
 Nameless, 0
 Nameless, 0
 Nameless, 0
+<<<<<<< HEAD
+>>>>>>> master
+||||||| merged common ancestors
+>>>>>>>>> Temporary merge branch 2
+=======
+Nameless, 0
+Nameless, 0
+Nameless, 0
+Nameless, 0
+Nameless, 0
+Nameless, 0
+Nameless, 0
+Nameless, 0
 >>>>>>> master
