@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import logic.User;
+
 public class DataManager {
 	private Data data;
 	private ArrayList<User> users;

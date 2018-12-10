@@ -1,4 +1,4 @@
-package application;
+package logic;
 
 
 public class User implements Comparable<User>{
@@ -11,6 +11,13 @@ public class User implements Comparable<User>{
 		this.name = name;
 		this.userId = id++;
 	}
+	
+	public User(String name, int score) {
+		this.name = name;
+		this.maxScore = score;
+		this.userId = id++;
+	}
+	
 	public int compareToByScore(User u) {
 		if(this.maxScore == u.maxScore) {
 			return this.name.compareTo(u.name);

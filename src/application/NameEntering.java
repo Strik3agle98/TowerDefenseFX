@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import logic.Logic;
+import logic.User;
 import javafx.scene.layout.HBox;
 public class NameEntering extends VBox{
 	private TextField name;
@@ -30,8 +31,8 @@ public class NameEntering extends VBox{
 		group1.getChildren().addAll(t1,name);
 		group1.setAlignment(Pos.CENTER_LEFT);
 		group1.setSpacing(10);
-		enter = new Button("Proceed");
-		back = new Button("Back");
+		enter = new Button("");
+		back = new Button("");
 		group2 = new HBox();
 		group2.getChildren().addAll(back,enter);
 		group2.setSpacing(20);
@@ -42,6 +43,10 @@ public class NameEntering extends VBox{
 			}
 		});
 		back.setCursor(Cursor.HAND);
+		enter.setPrefSize(200, 50);
+		enter.setStyle("-fx-background-image: url('PROCEED.png')");
+		back.setPrefSize(200, 50);
+		back.setStyle("-fx-background-image: url('BACK.png')");
 		enter.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("You pressed enter.");

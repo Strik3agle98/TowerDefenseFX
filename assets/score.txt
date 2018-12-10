@@ -1,0 +1,7 @@
+---Player List---
+Cat, 500
+Dai, 500
+Nut, 700
+Can, 2000
+Can, 200
+Can, 200
