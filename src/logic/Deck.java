@@ -19,12 +19,11 @@ import javafx.scene.text.Font;
 
 public class Deck extends GridPane{
 	private static ArrayList<Card> cards;
-	private double posX,posY,defaultX,defaultY;
-	private Canvas score;
+	private static Canvas score;
 	public Deck() {
 		cards = new ArrayList<Card>();
 		score = new Canvas(100,100);
-		drawCurrentScoreString(score.getGraphicsContext2D());
+		drawCurrentScoreString();
 		add(score,0,0);
 		for(int i = 1; i <= 3; i++) {
 			Card c = new Card(i);
@@ -35,15 +34,16 @@ public class Deck extends GridPane{
 		setPadding(new Insets(10,10,10,10));
 		
 	}
-	public void drawCurrentScoreString(GraphicsContext gc){
-		gc.setFill(Color.BLACK);
-		gc.setFont(new Font(40));
-		gc.clearRect(0, 0, this.score.getWidth(), this.score.getHeight());
-		gc.fillText("" + GUI.getScore(), this.score.getWidth() / 2, this.score.getWidth() / 2);
+	public static void drawCurrentScoreString(){
+		Deck.score.getGraphicsContext2D().setFill(Color.BLACK);
+		Deck.score.getGraphicsContext2D().setFont(new Font(30));
+		Deck.score.getGraphicsContext2D().clearRect(0, 0, Deck.score.getWidth(), Deck.score.getHeight());
+		Deck.score.getGraphicsContext2D().fillText("" + Logic.MONEY, Deck.score.getWidth() / 2 - 35, Deck.score.getWidth() / 2 + 45);
 	}
 	public static Card getCard(int i) {
 		return cards.get(i - 1);
 	}
+	
 	public static void update() {
 		for(Card card : cards) {
 			if(card.isReloading()) {
@@ -51,7 +51,8 @@ public class Deck extends GridPane{
 				card.updateProgress(1);
 				System.out.println("Updated card");
 			}
+			card.checkMoneyStatus();
+			drawCurrentScoreString();
 		}
-		
 	}
 }

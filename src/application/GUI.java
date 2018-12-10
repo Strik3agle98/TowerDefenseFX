@@ -26,7 +26,6 @@ public class GUI extends Application {
 	private static Scene sc_GameScreen;
 	private static Scene sc_GameOver;
 	private static AudioClip BGM;
-	private static int Score = 0;
 	private static double volume = 1.0;
 	public static Stage getStage() {
 		return guiStage;
@@ -54,9 +53,6 @@ public class GUI extends Application {
 	}
 	public static Data getData() {
 		return data;
-	}
-	public static int getScore() {
-		return Score;
 	}
 	public static double getVolume() {
 		return volume;

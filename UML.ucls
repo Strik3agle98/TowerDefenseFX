@@ -244,40 +244,31 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="logic.UserManagement" project="TowerDefenseFX" 
-    file="/TowerDefenseFX/src/logic/UserManagement.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1177" y="756"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <generalization id="29">    
+  <generalization id="28">    
     <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="24"/>  
   </generalization>  
-  <generalization id="30">    
+  <generalization id="29">    
     <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="25"/>  
   </generalization>  
-  <realization id="31">    
+  <realization id="30">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="23"/>  
   </realization>  
-  <generalization id="32">    
+  <generalization id="31">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="26"/>  
   </generalization>  
-  <generalization id="33">    
+  <generalization id="32">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="24"/>  
   </generalization>  
-  <generalization id="34">    
+  <generalization id="33">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="25"/>  
   </generalization>  
-  <generalization id="35">    
+  <generalization id="34">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="24"/>  
   </generalization>  

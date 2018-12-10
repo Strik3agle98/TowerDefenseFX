@@ -136,6 +136,8 @@ public class Field extends GridPane{
 		for(Target target : targets) {
 			target.update();
 			if(target.isDead()) {
+				Logic.SCORE += 1000;
+				Logic.MONEY += 100;
 				t.add((Object)target);
 				enemyCount[target.getRow()]--;
 			}

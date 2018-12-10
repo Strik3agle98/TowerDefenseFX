@@ -72,6 +72,7 @@ public class Map extends GridPane{
 							if(Field.getTable(row,col) == null) {
 								int tower_index = Integer.parseInt(db.getString().substring(6, 7));
 								Deck.getCard(tower_index).setReloading(true);
+								Logic.MONEY -= Deck.getCard(tower_index).getCost();
 								switch(tower_index) {
 									case 1: Field.addTower((Tower)(new Frenchfries(row,col)), row, col); break;
 									case 2: Field.addTower((Tower)(new IceCream(row,col)), row, col); break;
