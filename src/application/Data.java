@@ -3,6 +3,7 @@ package application;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,6 +92,18 @@ public class Data{
 		return Top5;
 	}
 	
-	
+	public void updateFile() {
+		try {
+			FileWriter writer = new FileWriter(new File("assets/score.txt"));
+			writer.write("---Player List---\n");
+			for(User u: users) {
+				writer.write(String.format("%s, %s\n", u.getName(), Integer.toString(u.getMaxScore())));
+			}
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }
