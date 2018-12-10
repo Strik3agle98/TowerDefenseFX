@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 
 public class MainMenu extends VBox{
-	Button play, settings, scoreboard;
+	private Button play, settings, scoreboard;
 	//Image Play;
 	
 	public MainMenu() {
